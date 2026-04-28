@@ -3,60 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focusly — Concentració Pura</title>
+    <title>Focusly — Recupera la teva concentració</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="landing-page">
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">FOCUSLY</a>
+    <header class="main-header">
+        <div class="container flex-header">
+            <a href="/" class="logo">FOCUSLY</a>
             <nav class="nav-links">
-                <a href="#features">App</a>
-                <a href="#about">Mètode</a>
-                <a href="#" class="btn-outline">Accés</a>
+                <a href="#features">Mètode</a>
+                <a href="#benefits">Beneficis</a>
+                <a href="login.html" class="nav-btn-secondary">Iniciar sessió</a>
+                <a href="dashboard.html" class="nav-btn-primary">Provar Gratis</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">CONCENTRA'T <br> EN L'ARA.</h1>
-                <p class="hero-subtitle">La primera eina de productivitat minimalista totalment en català.</p>
-                <div class="hero-actions">
-                    <a href="#" class="btn-dark">Comença gratis</a>
-                    <a href="#" class="btn-link">Explorar funcionalitats →</a>
+                <div class="hero-content">
+                    <span class="badge">L'app #1 de productivitat en català</span>
+                    <h1 class="main-title">Menys soroll. <br> Més resultats.</h1>
+                    <p class="main-subtitle">L'eina de concentració definitiva dissenyada per a professionals que busquen la màxima claredat mental.</p>
+                    <div class="cta-container">
+                        <a href="dashboard.html" class="btn-black">Comença ara — és gratis</a>
+                        <p class="cta-note">No cal targeta de crèdit. Instal·lació en 1 minut.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
-            <div class="container grid">
-                <div class="feature-card">
-                    <span class="number">01</span>
-                    <h3>Interfície Neta</h3>
-                    <p>Sense distraccions. Només tu i la teva tasca actual.</p>
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Dissenyada per al teu flux de treball</h2>
                 </div>
-                <div class="feature-card invert">
-                    <span class="number">02</span>
-                    <h3>Disseny Local</h3>
-                    <p>Pensada i escrita per a la comunitat catalana.</p>
+                <div class="features-grid">
+                    <article class="feature-item">
+                        <div class="icon-box">01</div>
+                        <h3>Mètode Pomodoro</h3>
+                        <p>Gestió del temps optimitzada per mantenir la teva energia al màxim durant tota la jornada.</p>
+                    </article>
+                    <article class="feature-item">
+                        <div class="icon-box">02</div>
+                        <h3>Interfície Invisible</h3>
+                        <p>Eliminem el desordre visual per permetre que la teva ment es focalitzi en el que realment importa.</p>
+                    </article>
+                    <article class="feature-item">
+                        <div class="icon-box">03</div>
+                        <h3>Anàlisi Local</h3>
+                        <p>Totes les teves dades i estadístiques en el teu idioma, amb total privadesa i seguretat.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="final-cta">
             <div class="container">
-                <h2>Recupera el teu temps.</h2>
-                <button class="btn-light">Registra't ara</button>
+                <div class="cta-box">
+                    <h2>Estàs preparat per ser més productiu?</h2>
+                    <p>Uneix-te a milers d'usuaris que ja han optimitzat el seu temps amb Focusly.</p>
+                    <a href="dashboard.html" class="btn-white">Crear el meu compte</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 Focusly. Dissenyat per Omar Ayaou.</p>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo">FOCUSLY</span>
+                <p>Productivitat conscient en català.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Producte</h4>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Mètode</a>
+                    <a href="#">Preus</a>
+                </div>
+                <div class="link-group">
+                    <h4>Empresa</h4>
+                    <a href="#">Sobre nosaltres</a>
+                    <a href="#">Privadesa</a>
+                    <a href="#">Contacte</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Omar Ayaou. Tots els drets reservats.</p>
         </div>
     </footer>
 
