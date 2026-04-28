@@ -1,45 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focusly - App</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focusly - Concentració en Català</title>
+    <meta
+      name="description"
+      content="La primera aplicació de concentració totalment en català."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  </head>
+  <body>
     <header class="navbar">
-        <img src="assets" alt="Logo de la aplicació">
-        <nav>
-
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="assets/logo.png" alt="Focusly Logo" />
+        </a>
+        <nav class="nav-menu">
+          <a href="#features">Funcionalitats</a>
+          <a href="#about">Sobre nosaltres</a>
+          <a href="login.html" class="btn-secondary">Iniciar sessió</a>
         </nav>
+      </div>
     </header>
-    <h1>Focusly App</h1>
-    <h2>La primera app de concentració en català</h2>
-    <main class="hero">
-        
-        <div>
-            <h3>Què és Focusly?</h3>
-            <p>Aquesta app texto exp</p>
-        </div>
-        <div>
-            <h3>Per què nosaltres</h3>
-            <p>Som la primera app en català de concentració etc</p>
-            <button>Vull conèixer més</button>
-        </div>
 
-        <div>
-            <p>Uneix-te ara mateix gratuitament</p>
-            <button>Iniciar sessió</button>
-            <button>Registrar-se</button>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="display-title">Focusly</h1>
+            <p class="lead-text">La primera app de concentració en català</p>
+            <div class="cta-group">
+              <a href="#register" class="btn-primary">Registrar-se</a>
+              <a href="#features" class="btn-link">Vull conèixer més</a>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section id="features" class="section-padding">
+        <div class="container grid">
+          <article class="card">
+            <h3>Què és Focusly?</h3>
+            <p>
+              Una eina minimalista dissenyada per optimitzar els teus fluxos de
+              treball i reduir les distraccions digitals.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Per què nosaltres?</h3>
+            <p>
+              Oferim una experiència nativa i propera, sent l'única solució del
+              mercat pensada íntegrament en català.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="container">
+          <h2>Comença ara mateix</h2>
+          <p>
+            Uneix-te a la nostra comunitat i millora la teva productivitat de
+            forma gratuïta.
+          </p>
+          <button type="button" class="btn-primary">Començar gratis</button>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>Tots els drets reservats </p>
-        <p>Omar Ayaou 2026</p>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 Omar Ayaou. Tots els drets reservats.</p>
+        </div>
+      </div>
     </footer>
-        
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
