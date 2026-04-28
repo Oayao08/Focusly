@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focusly — Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-black antialiased font-sans">
+    <header class="border-b-4 border-black p-6 sticky top-0 bg-white z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-black uppercase tracking-tighter">Focusly</h1>
+        <nav class="flex gap-6 items-center">
+          <span
+            class="text-xs font-bold uppercase bg-black text-white px-2 py-1"
+            >Sessió Activa</span
+          >
+          <button class="font-bold hover:underline">Perfil</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 lg:p-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <aside class="lg:col-span-4 space-y-12">
+          <section
+            id="pomodoro"
+            class="border-4 border-black p-8 text-center bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+          >
+            <h2
+              class="text-xs font-black uppercase mb-6 tracking-widest text-gray-500 italic"
+            >
+              — Pomodoro —
+            </h2>
+            <div class="text-7xl font-black mb-8 tabular-nums">25:00</div>
+            <div class="flex flex-col gap-3">
+              <button
+                class="bg-black text-white py-4 font-bold uppercase hover:bg-white hover:text-black border-2 border-black transition-colors"
+              >
+                Iniciar
+              </button>
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  class="border-2 border-black py-2 font-bold uppercase hover:bg-gray-100"
+                >
+                  Pausa
+                </button>
+                <button
+                  class="border-2 border-black py-2 font-bold uppercase hover:bg-gray-100"
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="tags" class="space-y-4">
+            <h3
+              class="text-sm font-black uppercase border-b-2 border-black pb-2"
+            >
+              Etiquetes
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="border-2 border-black px-3 py-1 text-xs font-bold uppercase hover:bg-black hover:text-white cursor-pointer transition-colors"
+                >Treball</span
+              >
+              <span
+                class="border-2 border-black px-3 py-1 text-xs font-bold uppercase hover:bg-black hover:text-white cursor-pointer transition-colors"
+                >Estudi</span
+              >
+              <span
+                class="border-2 border-black px-3 py-1 text-xs font-bold uppercase hover:bg-black hover:text-white cursor-pointer transition-colors"
+                >Personal</span
+              >
+              <button
+                class="bg-gray-100 px-3 py-1 text-xs font-bold uppercase border-2 border-dashed border-gray-400 text-gray-500"
+              >
+                + Nova
+              </button>
+            </div>
+          </section>
+        </aside>
+
+        <section id="workspace" class="lg:col-span-8">
+          <div class="border-4 border-black min-h-[500px] flex flex-col">
+            <header
+              class="border-b-4 border-black p-4 flex justify-between items-center"
+            >
+              <h2 class="font-black uppercase">Espai de Treball</h2>
+              <div class="flex gap-2">
+                <div class="w-3 h-3 bg-black rounded-full"></div>
+                <div class="w-3 h-3 bg-black rounded-full"></div>
+              </div>
+            </header>
+
+            <div
+              class="flex-grow flex items-center justify-center p-12 text-center"
+            >
+              <div class="max-w-sm">
+                <p class="text-4xl mb-4 font-black">∅</p>
+                <p class="text-lg font-bold uppercase leading-tight mb-2">
+                  Encara no hi ha tasques
+                </p>
+                <p class="text-sm text-gray-500">
+                  Afegeix la teva primera activitat per començar el compte
+                  enrere.
+                </p>
+                <button
+                  class="mt-8 border-2 border-black px-6 py-3 font-black uppercase hover:bg-black hover:text-white transition-all"
+                >
+                  + Crear nova tasca
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="fixed bottom-0 w-full bg-white border-t-2 border-black p-2 text-[10px] font-bold uppercase tracking-widest flex justify-between px-6"
+    >
+      <div>Status: Ready</div>
+      <div>Omar Ayaou 2026 — Build v1.0.0</div>
+    </footer>
+  </body>
+</html>
