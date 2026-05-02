@@ -1,6 +1,4 @@
-// ==========================================
-// 1. LÓGICA DEL TEMPORIZADOR (POMODORO)
-// ==========================================
+//POMODORO
 
 // Variables del temporizador
 let temporizador; // Guardará el intervalo
@@ -39,7 +37,7 @@ function iniciarTemporizador() {
             // Cuando llega a cero
             clearInterval(temporizador);
             enMarcha = false;
-            alert("¡Sessió completada! Bona feina."); // Mensaje en catalán para cuadrar con tu app
+            alert("¡Sessió completada! Bona feina."); // Mensaje en catalán para cuadrar con app
         }
     }, 1000); // 1000 milisegundos = 1 segundo
 }
@@ -63,11 +61,9 @@ btnEmpezar.addEventListener('click', iniciarTemporizador);
 btnPausa.addEventListener('click', pausarTemporizador);
 btnReiniciar.addEventListener('click', reiniciarTemporizador);
 
+// TAGS
 
-// ==========================================
-// 2. LÓGICA DE LAS ETIQUETAS (TAGS)
-// ==========================================
-// Hacemos que al hacer clic en una etiqueta, se marque como activa
+// Al hacer clic en una etiqueta, se marque como activa
 
 const etiquetas = document.querySelectorAll('.tag-cloud .badge:not(.add-tag)');
 
@@ -84,9 +80,8 @@ etiquetas.forEach(function(etiqueta) {
 });
 
 
-// ==========================================
-// 3. LÓGICA DE LAS PESTAÑAS (TABS)
-// ==========================================
+//TAGS lógica
+
 // Cambiar visualmente entre "Tasques del dia" y "Notes ràpides"
 
 const pestanas = document.querySelectorAll('.tab');
