@@ -1,108 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focusly — Panell de Control</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/dashboard.css" />
-</head>
-<body class="dashboard-page">
-
+  </head>
+  <body class="landing-page dashboard-page">
     <header class="main-header dashboard-header">
-        <div class="container flex-header">
-            <div class="brand">
-                <a href="index.html" class="logo">FOCUSLY</a>
-            </div>
-            
-            <nav class="nav-links header-actions">
-                <div class="status-badge">
-                    <span class="pulse-dot"></span>
-                    <span class="status-text">Mode Focus Actiu</span>
-                </div>
-                <button class="profile-btn" aria-label="Perfil d'usuari">
-                    <div class="avatar-circle">OA</div>
-                </button>
-            </nav>
+      <div class="container flex-header">
+        <div class="brand">
+          <a href="../index.html" class="logo">FOCUSLY</a>
         </div>
+
+        <nav class="nav-links header-actions">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Mode Focus Actiu</span>
+          </div>
+          <button class="profile-btn" aria-label="Perfil d'usuari">
+            <div class="avatar-circle">OA</div>
+          </button>
+        </nav>
+      </div>
     </header>
 
-    <main class="app-main container">
-        <div class="dashboard-grid">
-            
-            <aside class="sidebar">
-                
-                <section class="feature-item widget">
-                    <header class="widget-header">
-                        <h3>Temporitzador</h3>
-                        <button class="icon-btn" aria-label="Configuració">⚙️</button>
-                    </header>
-                    
-                    <div class="timer-display">
-                        <span class="time-remaining">25:00</span>
-                        <p class="timer-subtitle">Sessió de concentració</p>
-                    </div>
-                    
-                    <div class="cta-container">
-                        <button class="btn-white btn-full">Començar sessió</button>
-                        <div class="timer-controls">
-                            <button class="btn-secondary">Pausa</button>
-                            <button class="btn-secondary">Reiniciar</button>
-                        </div>
-                    </div>
-                </section>
+    <main
+      class="app-main container"
+      style="padding-top: 120px; padding-bottom: 60px"
+    >
+      <div class="dashboard-grid">
+        <aside class="sidebar">
+          <section class="feature-item widget timer-widget">
+            <header class="widget-header">
+              <h3 style="margin: 0; font-size: 1.2rem">Temporitzador</h3>
+              <button class="icon-btn" aria-label="Configuració">⚙️</button>
+            </header>
 
-                <section class="feature-item widget">
-                    <h3>Etiquetes de sessió</h3>
-                    <div class="tag-cloud">
-                        <button class="badge active-tag">Treball</button>
-                        <button class="badge">Estudi</button>
-                        <button class="badge">Personal</button>
-                        <button class="badge add-tag">+ Nova</button>
-                    </div>
-                </section>
-                
-            </aside>
+            <div class="timer-display">
+              <span id="time-remaining" class="time-text">25:00</span>
+              <p class="timer-subtitle">Sessió de concentració</p>
+            </div>
 
-            <section class="workspace">
-                <div class="feature-item workspace-card">
-                    
-                    <header class="workspace-header">
-                        <div class="header-tabs">
-                            <button class="tab active">Tasques del dia</button>
-                            <button class="tab">Notes ràpides</button>
-                        </div>
-                    </header>
+            <div class="cta-container">
+              <button id="start-btn" class="btn-white btn-full">
+                Començar sessió
+              </button>
+              <div class="timer-controls">
+                <button id="pause-btn" class="btn-secondary btn-sm">
+                  Pausa
+                </button>
+                <button id="reset-btn" class="btn-secondary btn-sm">
+                  Reiniciar
+                </button>
+              </div>
+            </div>
+          </section>
 
-                    <div class="workspace-content">
-                        <div class="empty-state text-center">
-                            <div class="icon-box empty-icon">✓</div>
-                            <h2>Tot en ordre</h2>
-                            <p>Encara no tens cap tasca programada per a aquesta sessió. Aprofita per planificar el teu dia amb claredat.</p>
-                            <button class="btn-secondary mt-4">
-                                + Afegeix la teva primera tasca
-                            </button>
-                        </div>
-                    </div>
-                    
+          <section class="feature-item widget">
+            <h3 style="margin-bottom: 20px; font-size: 1.2rem">
+              Etiquetes de sessió
+            </h3>
+            <div class="tag-cloud">
+              <button class="badge active-tag">Treball</button>
+              <button class="badge">Estudi</button>
+              <button class="badge">Personal</button>
+              <button class="badge add-tag">+ Nova</button>
+            </div>
+          </section>
+        </aside>
+
+        <section class="workspace">
+          <div class="feature-item workspace-card">
+            <header class="workspace-header">
+              <div class="header-tabs">
+                <button class="tab active-tab">Tasques del dia</button>
+                <button class="tab">Notes ràpides</button>
+              </div>
+            </header>
+
+            <div class="workspace-content">
+              <div class="empty-state">
+                <div
+                  class="icon-box empty-icon"
+                  style="margin: 0 auto 20px auto"
+                >
+                  ✓
                 </div>
-            </section>
-
-        </div>
+                <h2 style="font-size: 2rem; margin-bottom: 10px">
+                  Tot en ordre
+                </h2>
+                <p>
+                  Encara no tens cap tasca programada per a aquesta sessió.
+                  Aprofita per planificar el teu dia amb claredat.
+                </p>
+                <button class="btn-secondary" style="margin-top: 15px">
+                  + Afegeix una tasca
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="dashboard-footer">
-        <div class="container footer-flex">
-            <div class="footer-stats">
-                <span class="badge"><strong>Sessió:</strong> 0 / 4 completades</span>
-                <span class="badge"><strong>Ratxa:</strong> 🔥 5 dies</span>
-            </div>
-            <div class="footer-legal">
-                <p>&copy; 2026 Focusly — Productivitat amb propòsit</p>
-            </div>
+      <div class="container footer-flex">
+        <div class="footer-stats">
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Sessió:</strong> 0 / 4 completades</span
+          >
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Ratxa:</strong> 🔥 5 dies</span
+          >
         </div>
+        <div class="footer-legal">
+          <p style="margin: 0; font-size: 0.9rem">
+            &copy; 2026 Omar Ayaou - Focusly
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <script src="js/app.js"></script>
-</body>
+    <script src="../js/dashboard.js"></script>
+  </body>
 </html>

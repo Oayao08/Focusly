@@ -1,169 +1,100 @@
-/* * FOCUSLY - DASHBOARD CORE STYLES
- * Estil: Minimalisme Professional / SaaS Modern
- * Paleta: Blanc, Negre, Grisos de contrast i Blau d'accent
- */
-
 /* =========================================
-   1. RESET & BASE
+   VARIABLES ESPECÍFIQUES DEL DASHBOARD
    ========================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Color d'acent (Turquesa suau) ideal per concentració */
+  --accent-color: #2dd4bf;
+  --accent-hover: #14b8a6;
+  --accent-transparent: rgba(45, 212, 191, 0.15);
+
+  /* Colors d'estat */
+  --status-active: #10b981; /* Verd */
+  --status-warning: #f59e0b; /* Taronja */
+  --app-bg: #18181b; /* Fons un pèl més sòlid per l'app */
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body.app-container {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-  background-color: #fcfcfc;
-  color: #1a1a1a;
-  line-height: 1.6;
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-  transition: all 0.2s ease-in-out;
+/* Redefinim el fons només per la pàgina de la app per evitar distraccions */
+body.dashboard-page {
+  background: var(--app-bg);
+  background-image: radial-gradient(
+    circle at top right,
+    rgba(45, 212, 191, 0.05) 0%,
+    transparent 40%
+  );
 }
 
 /* =========================================
-   2. HEADER & NAVEGACIÓ
+   ESTRUCTURA GRID (LAYOUT)
    ========================================= */
-.app-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
-.header-content {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-logo {
-  width: 32px;
-  height: 32px;
-  background-color: #000000;
-  border-radius: 8px;
-  display: block;
-}
-
-.brand-name {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  text-transform: lowercase;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.user-status {
+/* =========================================
+   COMPONENTS DE LA CAPÇALERA
+   ========================================= */
+.status-badge {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #f0fdf4;
-  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid #dcfce7;
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-.status-indicator {
+.pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: #22c55e;
+  background-color: var(--status-active);
   border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseActive 2s infinite;
 }
 
 .status-text {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--status-active);
+  font-family: var(--font-sans);
   font-weight: 600;
-  color: #166534;
 }
 
-.user-profile {
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.avatar-circle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #000000;
-  padding: 2px;
-}
-
-.user-profile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* =========================================
-   3. LAYOUT ESTRUCTURAL
-   ========================================= */
-.app-main {
-  flex: 1;
-  padding: 40px 0;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.layout-grid {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 40px;
-  padding: 0 24px;
-}
-
-/* =========================================
-   4. SIDEBAR & WIDGETS
-   ========================================= */
-.sidebar {
+  background: var(--accent-color);
+  color: var(--bg-dark-start);
   display: flex;
-  flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
 }
 
+.avatar-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent-transparent);
+}
+
+/* =========================================
+   GINYS LATERALS (WIDGETS)
+   ========================================= */
 .widget {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e5e5e5;
-  padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  padding: 30px; /* Sobre-escrivim el padding de feature-item si cal */
 }
 
 .widget-header {
@@ -171,450 +102,209 @@ button {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
 }
 
-.widget-title {
-  font-size: 0.875rem;
-  font-weight: 700;
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.icon-btn:hover {
+  color: var(--text-primary);
+  transform: rotate(45deg);
+}
+
+/* Temporitzador */
+.timer-display {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.time-text {
+  font-size: 4.5rem;
+  font-weight: 300;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -2px;
+  text-shadow: 0 0 20px var(--accent-transparent);
+}
+
+.timer-subtitle {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--accent-color); /* Acent color per destacar */
+  font-family: var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #737373;
-}
-
-.settings-icon {
-  font-size: 1.2rem;
-  opacity: 0.5;
-}
-
-.settings-icon:hover {
-  opacity: 1;
-}
-
-/* Pomodoro Specific */
-.pomodoro-widget {
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  text-align: center;
-}
-
-.pomodoro-widget .widget-title {
-  color: #a3a3a3;
-}
-
-.timer-display {
-  padding: 20px 0;
-  margin-bottom: 24px;
-}
-
-.time-remaining {
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: -3px;
-  font-variant-numeric: tabular-nums;
 }
 
 .timer-controls {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.btn-main {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 16px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1);
-}
-
-.btn-main:hover {
-  transform: translateY(-2px);
-  background-color: #f5f5f5;
-}
-
-.btn-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 12px;
+  margin-top: 16px;
+  width: 100%;
 }
 
-.btn-ghost {
-  color: #a3a3a3;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 10px;
-  border: 1px solid #262626;
-  border-radius: 8px;
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  flex: 1;
 }
 
-.btn-ghost:hover {
-  color: #ffffff;
-  border-color: #525252;
-  background-color: #171717;
-}
-
-/* Tags Specific */
+/* Etiquetes */
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.tag {
-  background-color: #f5f5f5;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #525252;
+.badge.active-tag {
+  background-color: var(--accent-transparent);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
-.tag.active {
-  background-color: #000000;
-  color: #ffffff;
+.badge.add-tag {
+  background-color: transparent;
+  border-style: dashed;
+  cursor: pointer;
 }
 
-.tag:hover:not(.active) {
-  background-color: #e5e5e5;
-}
-
-.tag-add {
-  border: 1px dashed #d4d4d4;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #a3a3a3;
-}
-
-.tag-add:hover {
-  border-color: #000000;
-  color: #000000;
+.badge.add-tag:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 /* =========================================
-   5. WORKSPACE & CONTENT
+   ÀREA DE TREBALL (WORKSPACE)
    ========================================= */
-.workspace {
-  width: 100%;
-}
-
 .workspace-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #e5e5e5;
   min-height: 600px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
 .workspace-header {
-  padding: 0 32px;
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #fafafa;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 30px;
 }
 
 .header-tabs {
   display: flex;
-  gap: 32px;
+  gap: 30px;
 }
 
 .tab {
-  padding: 24px 0;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #737373;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-family: var(--font-sans);
+  padding: 0 0 16px 0;
+  cursor: pointer;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
 }
 
-.tab.active {
-  color: #000000;
+.tab:hover {
+  color: var(--text-primary);
 }
 
-.tab.active::after {
+.tab.active-tab {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tab.active-tab::after {
   content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #000000;
-}
-
-.workspace-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px;
+  background-color: var(--accent-color);
+  border-radius: 3px 3px 0 0;
 }
 
 .empty-state {
   text-align: center;
-  max-width: 320px;
+  padding: 60px 20px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.empty-illustration {
-  font-size: 4rem;
-  margin-bottom: 24px;
-  filter: grayscale(1);
-  opacity: 0.3;
-}
-
-.empty-state h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.empty-state p {
-  color: #737373;
-  font-size: 0.95rem;
-  margin-bottom: 32px;
-}
-
-.btn-primary-outline {
-  border: 2px solid #000000;
-  padding: 14px 28px;
-  border-radius: 12px;
-  font-weight: 700;
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-}
-
-.btn-primary-outline:hover {
-  background-color: #000000;
-  color: #ffffff;
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  border-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-muted);
 }
 
 /* =========================================
-   6. FOOTER (BARRA D'ESTAT)
+   FOOTER DASHBOARD
    ========================================= */
-.app-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #e5e5e5;
-  padding: 16px 24px;
+.dashboard-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 20px 0;
+  background: var(--bg-header);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.footer-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.footer-info {
+.footer-stats {
   display: flex;
-  gap: 24px;
-}
-
-.info-item {
-  font-size: 0.75rem;
-  color: #525252;
-}
-
-.info-item strong {
-  color: #000000;
-  text-transform: uppercase;
-  margin-right: 4px;
-}
-
-.footer-legal {
-  font-size: 0.75rem;
-  color: #a3a3a3;
-  font-weight: 500;
+  gap: 16px;
 }
 
 /* =========================================
-   7. ANIMACIONS I MICRO-INTERACCIONS
+   ANIMACIONS
    ========================================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@keyframes pulseActive {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
   }
-}
-
-.workspace-card,
-.widget {
-  animation: fadeIn 0.5s ease-out forwards;
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 /* =========================================
-   8. ADAPTACIÓ RESPONSIVE (MÒBIL)
+   RESPONSIVE APP
    ========================================= */
-@media (max-width: 1024px) {
-  .layout-grid {
+@media (max-width: 900px) {
+  .dashboard-grid {
     grid-template-columns: 1fr;
   }
 
-  .sidebar {
-    order: 2;
+  .workspace-card {
+    min-height: 400px;
   }
 
-  .workspace {
-    order: 1;
-  }
-}
-
-@media (max-width: 640px) {
-  .app-header {
-    height: 64px;
-  }
-
-  .brand-name {
-    display: none;
-  }
-
-  .status-text {
-    display: none;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .time-remaining {
-    font-size: 4rem;
-  }
-
-  .workspace-content {
-    padding: 24px;
-  }
-
-  .app-footer {
+  .footer-flex {
     flex-direction: column;
-    gap: 12px;
-    text-align: center;
+    gap: 16px;
   }
-}
-
-/* =========================================
-   9. ESTILS DE FOCUS (ACCESSIBILITAT)
-   ========================================= */
-button:focus-visible {
-  outline: 3px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* =========================================
-   10. DETALLS FINALS D'IMPACTE (EXTRES)
-   ========================================= */
-
-/* Efecte de vidre esmerilat opcional */
-.navbar-glass {
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.8);
-}
-
-/* Barra de scroll personalitzada */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
-}
-
-/* Selecció de text */
-::selection {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-/* Estil per a missatges de notificació ràpida */
-.toast-mockup {
-  position: fixed;
-  bottom: 80px;
-  right: 24px;
-  background: #000;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  display: none; /* Es mostrarà via JS */
-}
-
-/* Separador decoratiu */
-.divider {
-  height: 1px;
-  background: #e5e5e5;
-  margin: 20px 0;
-  width: 100%;
-}
-
-/* Imatge de fons molt subtil per al main */
-.app-main::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-/* Estat de càrrega o esquelet */
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Tooltip simple */
-[data-tooltip] {
-  position: relative;
-}
-
-[data-tooltip]:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #000;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 10px;
-  white-space: nowrap;
-  margin-bottom: 5px;
-}
-
-/* Ajustos de contrast per a modes foscos del sistema */
-@media (prefers-color-scheme: dark) {
-  /* Aquí podríem afegir regles per a dark mode si fos necessari, 
-       però el disseny blanc/negre ja és resilient */
 }
