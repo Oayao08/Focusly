@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte - El Meu Projecte</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* Estilos específicos para el formulario integrados con tus variables CSS */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: var(--text-primary);
+            outline: none;
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .info-item {
+            margin-bottom: 30px;
+        }
+        .info-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .info-item p {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <header class="main-header">
+        <div class="container flex-header">
+            <div class="logo">Projecte</div>
+            <nav class="nav-links">
+                <a href="../index.html">Inici</a>
+                <a href="nosaltres.html">Nosaltres</a>
+                <a href="privacitat.html">Privacitat</a>
+                <a href="login.html" class="nav-btn-primary">Accedir</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 140px; padding-bottom: 100px;">
+        
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px auto;">
+            <h1 class="main-title" style="font-size: 3rem; margin-bottom: 15px;">Parlem-ne?</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Tens algun dubte, suggeriment o problema amb la plataforma? Emplena el formulari o utilitza els nostres canals directes.
+            </p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>✉️ Correu Electrònic</h3>
+                    <p>suport@elmeuprojecte.com</p>
+                </div>
+                
+                <div class="info-item">
+                    <h3>📍 Ubicació</h3>
+                    <p>Barcelona, Catalunya<br>Operant de forma remota.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🕒 Horari d'atenció</h3>
+                    <p>De dilluns a divendres<br>09:00 - 18:00 (CEST)</p>
+                </div>
+                
+                <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color);">
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                        Aquest és un projecte demo en fase beta. Et respondrem al més aviat possible.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="alert('Formulari enviat de prova!'); return false;">
+                    
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" class="form-control" placeholder="El teu nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correu electrònic</label>
+                        <input type="email" id="email" class="form-control" placeholder="correu@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assumpte">Assumpte</label>
+                        <input type="text" id="assumpte" class="form-control" placeholder="En què et podem ajudar?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="missatge">Missatge</label>
+                        <textarea id="missatge" class="form-control" placeholder="Escriu aquí el teu missatge..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Enviar Missatge</button>
+                    
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center; color: var(--text-muted); padding: 20px 0; border-top: 1px solid var(--border-color);">
+                &copy; 2026 El Meu Projecte. Tots els drets reservats.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
