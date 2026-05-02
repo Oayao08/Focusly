@@ -21,7 +21,8 @@ async function handleRegister() {
     password,
     options: {
       // Cambia esto por la URL de tu página HTML
-      emailRedirectTo: "http://127.0.0.1:5500/app/index.html",
+      emailRedirectTo:
+        "https://automatic-guide-g46xg5wvvgwx2w6j-5501.app.github.dev/app/index.html",
     },
   });
 
