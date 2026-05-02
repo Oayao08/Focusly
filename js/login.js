@@ -1,6 +1,6 @@
 // 1. CONFIGURACIÓN (REEMPLAZA ESTO)
-const SUPABASE_URL = "TU_URL_DE_SUPABASE";
-const SUPABASE_KEY = "TU_ANON_KEY";
+const SUPABASE_URL = "https://jfwutdlgumqwpqythmyq.supabase.co/";
+const SUPABASE_KEY = "sb_publishable_FrnClXif8qW-UJvzNqAeMQ_hW4yBb2D";
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function toggleAuth() {
@@ -45,6 +45,6 @@ async function handleLogin() {
   } else {
     msg.innerText = "Sessió iniciada. Redirigint...";
     msg.className = "status-msg success";
-    setTimeout(() => (window.location.href = "../app/app.html"), 1000);
+    setTimeout(() => (window.location.href = "../app/index.html"), 1000);
   }
 }
