@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accés - El Meu Projecte</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+      .auth-container {
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-top: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+      .toggle-link {
+        color: var(--text-secondary);
+        cursor: pointer;
+        text-decoration: underline;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: white;
+      }
+      .status-msg {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .error {
+        color: #ff6b6b;
+      }
+      .success {
+        color: #51cf66;
+      }
+    </style>
+  </head>
+  <body class="landing-page">
+    <header class="main-header">
+      <div class="container flex-header">
+        <div class="logo">Projecte</div>
+        <nav class="nav-links">
+          <a href="../index.html">Inici</a>
+          <a href="privacitat.html">Privacitat</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-narrow" style="padding-top: 120px">
+      <div class="auth-container">
+        <div id="login-section">
+          <h2 class="main-title" style="font-size: 2rem; margin-bottom: 20px">
+            Benvingut de nou
+          </h2>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Correu electrònic"
+          />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Contrasenya"
+          />
+          <button
+            onclick="handleLogin()"
+            class="btn-primary"
+            style="width: 100%; margin-top: 10px"
+          >
+            Entrar
+          </button>
+          <span class="toggle-link" onclick="toggleAuth()"
+            >No tens compte? Registra't aquí</span
+          >
+        </div>
+
+        <div id="register-section" class="hidden">
+          <h2 class="main-title" style="font-size: 2rem; margin-bottom: 20px">
+            Crea un compte
+          </h2>
+          <input type="email" id="reg-email" placeholder="Correu electrònic" />
+          <input
+            type="password"
+            id="reg-password"
+            placeholder="Contrasenya (mín. 6 caràcters)"
+          />
+          <button
+            onclick="handleRegister()"
+            class="btn-primary"
+            style="width: 100%; margin-top: 10px"
+          >
+            Registrar-me
+          </button>
+          <span class="toggle-link" onclick="toggleAuth()"
+            >Ja tens compte? Inicia sessió</span
+          >
+        </div>
+
+        <div id="message" class="status-msg"></div>
+      </div>
+    </main>
+
+    <script src="../js/login.js"></script>
+  </body>
+</html>
