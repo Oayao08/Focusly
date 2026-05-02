@@ -54,6 +54,6 @@ async function handleLogin() {
   } else {
     msg.innerText = "Sessió iniciada. Redirigint...";
     msg.className = "status-msg success";
-    setTimeout(() => (window.location.href = "../app/index.html"), 1000);
+    setTimeout(() => (window.location.href = "app.html"), 1000);
   }
 }
