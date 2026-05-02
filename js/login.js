@@ -1,6 +1,7 @@
 // 1. CONFIGURACIÓN (REEMPLAZA ESTO)
-const SUPABASE_URL = "https://jfwutdlgumqwpqythmyq.supabase.co/";
-const SUPABASE_KEY = "sb_publishable_FrnClXif8qW-UJvzNqAeMQ_hW4yBb2D";
+const SUPABASE_URL = "https://jfwutdlgumqwpqythmyq.supabase.co";
+const SUPABASE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impmd3V0ZGxndW1xd3BxeXRobXlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3MTA1MTQsImV4cCI6MjA5MzI4NjUxNH0.DvnVJMXADKYJhuRX19sUYwmfG3nheqG8bA0naw_NZ68";
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function toggleAuth() {
@@ -15,7 +16,14 @@ async function handleRegister() {
   const password = document.getElementById("reg-password").value;
   const msg = document.getElementById("message");
 
-  const { data, error } = await supabaseClient.auth.signUp({ email, password });
+  const { data, error } = await supabaseClient.auth.signUp({
+    email,
+    password,
+    options: {
+      // Cambia esto por la URL de tu página HTML
+      emailRedirectTo: "http://127.0.0.1:5500/app/index.html",
+    },
+  });
 
   if (error) {
     msg.innerText = "Error: " + error.message;
