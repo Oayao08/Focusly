@@ -1,5 +1,5 @@
 :root {
-  /* Colors de Fons i Degradats */
+  /* Backgrounds */
   --bg-dark-start: #1e1e1e;
   --bg-dark-end: #3a3a3a;
   --bg-header: rgba(30, 30, 30, 0.85);
@@ -12,7 +12,7 @@
   --text-muted: #999999;
   --text-inverse: #000000;
 
-  /* Botons (Basat en el teu codi) */
+  /* Botons */
   --btn-primary-bg: #ffffff;
   --btn-primary-text: #000000;
   --btn-primary-hover: #dddddd;
@@ -34,7 +34,7 @@
   /* Espaiats i Mides */
   --container-max-width: 1200px;
   --container-narrow: 800px;
-  --container-tiny: 500px; /* Del teu codi original */
+  --container-tiny: 500px; 
   --padding-global: 24px;
 
   /* Transicions */
@@ -48,9 +48,6 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* =========================================
-   2. RESET & NORMALIZE
-   ========================================= */
 *,
 *::before,
 *::after {
@@ -64,9 +61,6 @@ html {
   font-size: 16px;
 }
 
-/* =========================================
-   3. ESTILS BASE (CORE STYLES)
-   ========================================= */
 body.landing-page {
   font-family: var(--font-main);
   background: linear-gradient(135deg, var(--bg-dark-start), var(--bg-dark-end));
@@ -75,7 +69,7 @@ body.landing-page {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
-  /* Hem tret el display:flex general per permetre l'estructura de la landing */
+  /*Treure el display:flex general per permetre l'estructura de la landing */
 }
 
 /* Contenidors Estructurals */
@@ -116,9 +110,7 @@ a {
   transition: var(--transition-fast);
 }
 
-/* =========================================
-   4. SISTEMA DE BOTONS (Adaptat del teu)
-   ========================================= */
+
 /* Classes base de botons (Primary / Secondary) */
 .btn-primary,
 .btn-white,
@@ -170,9 +162,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   5. CAPÇALERA I NAVEGACIÓ (HEADER)
-   ========================================= */
+
 .main-header {
   height: 90px;
   display: flex;
@@ -225,7 +215,7 @@ a {
   color: var(--text-primary);
 }
 
-/* Subratllat animat pels enllaços de navegació */
+/* Subratllat animat enllaços de navegació */
 .nav-links > a:not([class*="btn"])::after {
   content: "";
   position: absolute;
@@ -241,9 +231,7 @@ a {
   width: 100%;
 }
 
-/* =========================================
-   6. SECCIÓ HERO (INICI)
-   ========================================= */
+
 .hero-section {
   padding: 200px 0 140px 0;
   text-align: center;
@@ -296,7 +284,7 @@ a {
   color: var(--text-secondary);
   max-width: var(
     --container-tiny
-  ); /* Utilitzem el teu max-width de 500px aquí */
+  ); 
   margin: 0 auto 48px;
 }
 
@@ -315,14 +303,12 @@ a {
   margin-bottom: 0;
 }
 
-/* =========================================
-   7. SECCIÓ DE CARACTERÍSTIQUES (MÈTODE)
-   ========================================= */
+
 .features-section {
   padding: 120px 0;
   position: relative;
   border-top: 1px solid var(--border-color);
-  background: rgba(0, 0, 0, 0.1); /* Lleugera foscor per separar */
+  background: rgba(0, 0, 0, 0.1); 
 }
 
 .section-header {
@@ -388,9 +374,7 @@ a {
   margin-bottom: 0;
 }
 
-/* =========================================
-   8. CTA FINAL
-   ========================================= */
+
 .final-cta {
   padding: 120px 0;
   border-top: 1px solid var(--border-color);
@@ -421,9 +405,6 @@ a {
   color: var(--text-secondary);
 }
 
-/* =========================================
-   9. PEU DE PÀGINA (FOOTER)
-   ========================================= */
 .main-footer {
   padding: 80px 0 40px 0;
   background-color: rgba(0, 0, 0, 0.3);
@@ -485,9 +466,7 @@ a {
   font-size: 0.85rem;
 }
 
-/* =========================================
-   10. ANIMACIONS (KEYFRAMES)
-   ========================================= */
+/*animacions*/
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -520,7 +499,7 @@ a {
   }
 }
 
-/* Aplicació de les animacions */
+
 .hero-content {
   animation: slideUp 1s ease-out forwards;
 }
@@ -535,9 +514,7 @@ a {
   animation: slideUp 0.8s ease-out 0.6s both;
 }
 
-/* =========================================
-   11. ACCESSILIBITAT I ESTATS (A11Y)
-   ========================================= */
+
 /* Focus visible per a navegació per teclat */
 :focus {
   outline: none;
@@ -549,7 +526,6 @@ a {
   border-radius: 4px;
 }
 
-/* Respectar preferències de moviment de l'usuari */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -559,7 +535,6 @@ a {
   }
 }
 
-/* Personalització del text seleccionat */
 ::selection {
   background-color: var(--text-primary);
   color: var(--text-inverse);
@@ -570,7 +545,6 @@ a {
   color: var(--text-inverse);
 }
 
-/* Barra de desplaçament personalitzada */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -588,11 +562,9 @@ a {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* =========================================
-   12. MEDIA QUERIES (RESPONSIVE DESIGN)
-   ========================================= */
+/*Responsive*/
 
-/* Pantalles Grans i Portàtils (Fins a 1024px) */
+/*1024px*/
 @media (max-width: 1024px) {
   .main-title {
     font-size: 3.5rem;
@@ -611,14 +583,14 @@ a {
   }
 }
 
-/* Tablets (Fins a 768px) */
+/* Tablets 768px */
 @media (max-width: 768px) {
   .main-header {
     height: 70px;
   }
 
   .nav-links {
-    display: none; /* Podries afegir un menú d'hamburguesa aquí via JS */
+    display: none;
   }
 
   .hero-section {
@@ -662,7 +634,7 @@ a {
   }
 }
 
-/* Telèfons Mòbils Petits (Fins a 480px) */
+/* Mòbils Petits 480px */
 @media (max-width: 480px) {
   .main-title {
     font-size: 2.5rem;
@@ -691,14 +663,7 @@ a {
   }
 }
 
-/* =========================================
-   13. ESTILS ESPECÍFICS (UTILITIES & TWEAKS)
-   ========================================= */
-
-/* Adaptacions específiques del HTML al nou disseny */
 .btn-black {
-  /* En el teu disseny dark-mode, aquest botó (que era negre sòlid)
-       passa a ser el botó secundari vorejat per millorar el contrast */
   background-color: transparent;
   border: 2px solid var(--btn-secondary-border);
   color: var(--btn-secondary-text);
@@ -711,7 +676,6 @@ a {
   border: none;
 }
 
-/* Modificadors d'amplada per botons (heretat del teu bloc de prova) */
 .btn-full {
   width: 80%;
   margin: 10px auto;
