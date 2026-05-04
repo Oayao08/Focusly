@@ -1,4 +1,3 @@
-// 1. CONFIGURACIÓN (REEMPLAZA ESTO)
 const SUPABASE_URL = "https://jfwutdlgumqwpqythmyq.supabase.co";
 const SUPABASE_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impmd3V0ZGxndW1xd3BxeXRobXlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3MTA1MTQsImV4cCI6MjA5MzI4NjUxNH0.DvnVJMXADKYJhuRX19sUYwmfG3nheqG8bA0naw_NZ68";
@@ -20,7 +19,6 @@ async function handleRegister() {
     email,
     password,
     options: {
-      // Cambia esto por la URL de tu página HTML
       emailRedirectTo:
         "https://automatic-guide-g46xg5wvvgwx2w6j-5501.app.github.dev/app/index.html",
     },
@@ -30,7 +28,7 @@ async function handleRegister() {
     msg.innerText = "Error: " + error.message;
     msg.className = "status-msg error";
   } else {
-    // IMPORTANTE: Si en Supabase tienes "Confirm Email" activado,
+    // IMPORTANTE: Si en Supabase "Confirm Email" activado,
     // el usuario no podrá loguearse hasta que haga clic en el link de su correo.
     msg.innerText = "Compte creat! Revisa el teu correu per confirmar.";
     msg.className = "status-msg success";
