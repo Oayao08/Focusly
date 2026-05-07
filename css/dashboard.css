@@ -1,37 +1,32 @@
-:root {
-  /* Color d'acent (Turquesa suau) ideal per concentració */
-  --accent-color: #2dd4bf;
-  --accent-hover: #14b8a6;
-  --accent-transparent: rgba(45, 212, 191, 0.15);
+/* ==========================================================================
+   ESTILOS DEL DASHBOARD
+   Tema oscuro con acentos en Turquesa suave y Verde
+   ========================================================================== */
 
-  /* Colors d'estat */
-  --status-active: #10b981;
-  --status-warning: #f59e0b; 
-  --app-bg: #18181b; /* Fons un pèl més sòlid per app */
-}
-
-/* Redefinim el fons només per la pàgina de la app per evitar distraccions */
+/* --- 1. FONDO GENERAL DE LA APP --- */
 body.dashboard-page {
-  background: var(--app-bg);
+  background-color: #18181b; /* Fondo oscuro sólido */
   background-image: radial-gradient(
     circle at top right,
-    rgba(45, 212, 191, 0.05) 0%,
+    rgba(45, 212, 191, 0.05) 0%, /* Brillo turquesa muy suave en la esquina */
     transparent 40%
   );
 }
 
+/* --- 2. ESTRUCTURA PRINCIPAL (GRID) --- */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px 1fr; /* Columna lateral de 320px y el resto para contenido */
   gap: 32px;
   align-items: start;
 }
 
+/* --- 3. INDICADORES DE ESTADO (STATUS) --- */
 .status-badge {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(16, 185, 129, 0.1);
+  background-color: rgba(16, 185, 129, 0.1); /* Fondo verde semitransparente */
   padding: 6px 14px;
   border-radius: 20px;
   border: 1px solid rgba(16, 185, 129, 0.2);
@@ -40,48 +35,20 @@ body.dashboard-page {
 .pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--status-active);
+  background-color: #10b981; /* Verde activo */
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: pulseActive 2s infinite;
+  animation: pulseActive 2s infinite; /* Llama a la animación de latido */
 }
 
 .status-text {
   font-size: 0.85rem;
-  color: var(--status-active);
-  font-family: var(--font-sans);
+  color: #10b981; /* Verde activo */
+  font-family: sans-serif;
   font-weight: 600;
 }
 
-.profile-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.avatar-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-color);
-  color: var(--bg-dark-start);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: var(--transition-fast);
-}
-
-.avatar-circle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--accent-transparent);
-}
-
-/*widgets*/
-
+/* --- 4. WIDGETS Y CAJAS --- */
 .widget {
   margin-bottom: 24px;
   padding: 30px; 
@@ -92,25 +59,25 @@ body.dashboard-page {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #3f3f46; /* Borde gris oscuro */
   padding-bottom: 12px;
 }
 
 .icon-btn {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: #a1a1aa; /* Gris claro (texto secundario) */
   font-size: 1.2rem;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: 0.2s ease;
 }
 
 .icon-btn:hover {
-  color: var(--text-primary);
+  color: #ffffff; /* Blanco al pasar el ratón */
   transform: rotate(45deg);
 }
 
-/* Temporitzador */
+/* --- 5. TEMPORIZADOR --- */
 .timer-display {
   text-align: center;
   margin: 30px 0;
@@ -119,18 +86,18 @@ body.dashboard-page {
 .time-text {
   font-size: 4.5rem;
   font-weight: 300;
-  font-family: var(--font-sans);
-  color: var(--text-primary);
+  font-family: sans-serif;
+  color: #ffffff; /* Texto principal blanco */
   line-height: 1;
   letter-spacing: -2px;
-  text-shadow: 0 0 20px var(--accent-transparent);
+  text-shadow: 0 0 20px rgba(45, 212, 191, 0.15); /* Sombra turquesa */
 }
 
 .timer-subtitle {
   margin-top: 8px;
   font-size: 0.95rem;
-  color: var(--accent-color); /* Acent color per destacar */
-  font-family: var(--font-sans);
+  color: #2dd4bf; /* Color turquesa suave */
+  font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -148,7 +115,7 @@ body.dashboard-page {
   flex: 1;
 }
 
-/* Etiquetes */
+/* --- 6. ETIQUETAS (TAGS) --- */
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -156,9 +123,9 @@ body.dashboard-page {
 }
 
 .badge.active-tag {
-  background-color: var(--accent-transparent);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
+  background-color: rgba(45, 212, 191, 0.15); /* Fondo turquesa transparente */
+  border-color: #2dd4bf; /* Borde turquesa */
+  color: #2dd4bf; /* Texto turquesa */
 }
 
 .badge.add-tag {
@@ -168,10 +135,11 @@ body.dashboard-page {
 }
 
 .badge.add-tag:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
+/* --- 7. ÁREA DE TRABAJO (WORKSPACE) --- */
 .workspace-card {
   min-height: 600px;
   display: flex;
@@ -179,7 +147,7 @@ body.dashboard-page {
 }
 
 .workspace-header {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #3f3f46;
   margin-bottom: 30px;
 }
 
@@ -191,24 +159,25 @@ body.dashboard-page {
 .tab {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: #a1a1aa; /* Gris claro */
   font-size: 1.1rem;
-  font-family: var(--font-sans);
+  font-family: sans-serif;
   padding: 0 0 16px 0;
   cursor: pointer;
   position: relative;
-  transition: var(--transition-fast);
+  transition: 0.2s ease;
 }
 
 .tab:hover {
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .tab.active-tab {
-  color: var(--text-primary);
+  color: #ffffff;
   font-weight: 600;
 }
 
+/* Línea indicadora de la pestaña activa */
 .tab.active-tab::after {
   content: "";
   position: absolute;
@@ -216,10 +185,11 @@ body.dashboard-page {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--accent-color);
+  background-color: #2dd4bf; /* Turquesa */
   border-radius: 3px 3px 0 0;
 }
 
+/* --- 8. ESTADOS VACÍOS (EMPTY STATES) --- */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -232,14 +202,15 @@ body.dashboard-page {
   height: 80px;
   font-size: 2rem;
   border-color: rgba(255, 255, 255, 0.05);
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--text-muted);
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #71717a; /* Gris apagado */
 }
 
+/* --- 9. PIE DE PÁGINA (FOOTER) --- */
 .dashboard-footer {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #3f3f46;
   padding: 20px 0;
-  background: var(--bg-header);
+  background-color: #18181b;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -257,15 +228,15 @@ body.dashboard-page {
   gap: 16px;
 }
 
-/*Animacions*/
+/* --- 10. ANIMACIONES --- */
 @keyframes pulseActive {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); /* Sombra verde */
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); /* Sombra se expande y desvanece */
   }
   100% {
     transform: scale(0.95);
@@ -273,10 +244,10 @@ body.dashboard-page {
   }
 }
 
-/*Responsive*/
+/* --- 11. DISEÑO RESPONSIVO (MÓVILES Y TABLETS) --- */
 @media (max-width: 900px) {
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Pasa todo a una sola columna */
   }
 
   .workspace-card {
