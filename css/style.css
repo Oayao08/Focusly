@@ -1,52 +1,7 @@
-:root {
-  /* Backgrounds */
-  --bg-dark-start: #1e1e1e;
-  --bg-dark-end: #3a3a3a;
-  --bg-header: rgba(30, 30, 30, 0.85);
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
-
-  /* Colors de Text */
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #999999;
-  --text-inverse: #000000;
-
-  /* Botons */
-  --btn-primary-bg: #ffffff;
-  --btn-primary-text: #000000;
-  --btn-primary-hover: #dddddd;
-  --btn-secondary-border: #ffffff;
-  --btn-secondary-text: #ffffff;
-  --btn-secondary-hover-bg: #ffffff;
-  --btn-secondary-hover-text: #000000;
-
-  /* Vores i Línies */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-color-hover: rgba(255, 255, 255, 0.4);
-
-  /* Tipografia */
-  --font-main: Garamond, "Times New Roman", serif;
-  --font-sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-
-  /* Espaiats i Mides */
-  --container-max-width: 1200px;
-  --container-narrow: 800px;
-  --container-tiny: 500px; 
-  --padding-global: 24px;
-
-  /* Transicions */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-
-  /* Ombres */
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
+/* ==========================================================================
+   ESTILOS DE LA LANDING PAGE
+   Tema oscuro elegante con contrastes en blanco y negro
+   ========================================================================== */
 
 *,
 *::before,
@@ -61,31 +16,36 @@ html {
   font-size: 16px;
 }
 
+/* --- 1. FONDO Y TIPOGRAFÍA BASE --- */
 body.landing-page {
-  font-family: var(--font-main);
-  background: linear-gradient(135deg, var(--bg-dark-start), var(--bg-dark-end));
-  background-attachment: fixed; /* Manté el degradat fix al fer scroll */
-  color: var(--text-primary);
+  font-family:
+    Garamond, "Times New Roman", serif; /* Fuente elegante principal */
+  background: linear-gradient(
+    135deg,
+    #1e1e1e,
+    #3a3a3a
+  ); /* Degradado gris oscuro */
+  background-attachment: fixed; /* Mantiene el degradado fijo al hacer scroll */
+  color: #ffffff; /* Texto principal blanco */
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
-  /*Treure el display:flex general per permetre l'estructura de la landing */
 }
 
-/* Contenidors Estructurals */
+/* --- 2. CONTENEDORES ESTRUCTURALES --- */
 .container {
-  max-width: var(--container-max-width);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--padding-global);
+  padding: 0 24px;
 }
 
 .container-narrow {
-  max-width: var(--container-narrow);
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 var(--padding-global);
+  padding: 0 24px;
 }
 
-/* Tipografia General */
+/* --- 3. TIPOGRAFÍA GENERAL --- */
 h1,
 h2,
 h3,
@@ -95,46 +55,47 @@ h6 {
   font-weight: normal;
   line-height: 1.2;
   margin-bottom: 0.5em;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 p {
   font-size: 1.2em;
   margin-bottom: 30px;
-  color: var(--text-secondary);
+  color: #cccccc; /* Gris claro para los párrafos */
 }
 
 a {
   text-decoration: none;
-  color: var(--text-primary);
-  transition: var(--transition-fast);
+  color: #ffffff;
+  transition: 0.2s ease;
 }
 
-
-/* Classes base de botons (Primary / Secondary) */
+/* --- 4. BOTONES --- */
 .btn-primary,
 .btn-white,
 .nav-btn-primary {
   display: inline-block;
   padding: 12px 24px;
-  background-color: var(--btn-primary-bg);
-  color: var(--btn-primary-text) !important;
+  background-color: #ffffff;
+  color: #000000 !important; /* Texto negro para contraste */
   border: none;
   border-radius: 8px;
   font-size: 1em;
-  font-family: var(--font-sans); /* Contrast modern pels botons */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif; /* Contraste moderno para los botones */
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: 0.3s ease;
 }
 
 .btn-primary:hover,
 .btn-white:hover,
 .nav-btn-primary:hover {
-  background-color: var(--btn-primary-hover);
+  background-color: #dddddd; /* Blanco atenuado */
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra media */
 }
 
 .btn-secondary,
@@ -143,39 +104,47 @@ a {
   display: inline-block;
   padding: 12px 24px;
   background-color: transparent;
-  color: var(--btn-secondary-text);
-  border: 2px solid var(--btn-secondary-border);
+  color: #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 8px;
   font-size: 1em;
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: 0.3s ease;
 }
 
 .btn-secondary:hover,
 .btn-black:hover,
 .nav-btn-secondary:hover {
-  background-color: var(--btn-secondary-hover-bg);
-  color: var(--btn-secondary-hover-text) !important;
+  background-color: #ffffff;
+  color: #000000 !important;
   transform: translateY(-2px);
 }
 
+.btn-full {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
+}
 
+/* --- 5. CABECERA (HEADER Y NAVEGACIÓN) --- */
 .main-header {
   height: 90px;
   display: flex;
   align-items: center;
-  background: var(--bg-header);
+  background: rgba(30, 30, 30, 0.85); /* Fondo semitransparente oscuro */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
-  transition: all var(--transition-normal);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .flex-header {
@@ -191,11 +160,13 @@ a {
 }
 
 .logo {
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 2px;
-  color: var(--text-primary);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -207,15 +178,15 @@ a {
 
 .nav-links > a:not([class*="btn"]) {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #cccccc;
   position: relative;
 }
 
 .nav-links > a:not([class*="btn"]):hover {
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
-/* Subratllat animat enllaços de navegació */
+/* Subrayado animado de los enlaces de navegación */
 .nav-links > a:not([class*="btn"])::after {
   content: "";
   position: absolute;
@@ -223,15 +194,15 @@ a {
   height: 1px;
   bottom: -4px;
   left: 0;
-  background-color: var(--text-primary);
-  transition: width var(--transition-normal);
+  background-color: #ffffff;
+  transition: width 0.3s ease;
 }
 
 .nav-links > a:not([class*="btn"]):hover::after {
   width: 100%;
 }
 
-
+/* --- 6. SECCIÓN PRINCIPAL (HERO) --- */
 .hero-section {
   padding: 200px 0 140px 0;
   text-align: center;
@@ -239,7 +210,7 @@ a {
   z-index: 1;
 }
 
-/* Element decoratiu per donar profunditat */
+/* Elemento decorativo para dar profundidad */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -251,7 +222,7 @@ a {
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.05) 0%,
-    transparent 70%
+    /* Brillo central muy sutil */ transparent 70%
   );
   z-index: -1;
   pointer-events: none;
@@ -259,17 +230,19 @@ a {
 
 .badge {
   display: inline-block;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 8px 20px;
   border-radius: 30px;
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 32px;
-  color: var(--text-secondary);
+  color: #cccccc;
 }
 
 .main-title {
@@ -281,10 +254,8 @@ a {
 
 .main-subtitle {
   font-size: 1.4rem;
-  color: var(--text-secondary);
-  max-width: var(
-    --container-tiny
-  ); 
+  color: #cccccc;
+  max-width: 500px;
   margin: 0 auto 48px;
 }
 
@@ -296,19 +267,21 @@ a {
 }
 
 .cta-note {
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #999999; /* Texto apagado */
   margin-top: 0;
   margin-bottom: 0;
 }
 
-
+/* --- 7. CARACTERÍSTICAS (FEATURES) --- */
 .features-section {
   padding: 120px 0;
   position: relative;
-  border-top: 1px solid var(--border-color);
-  background: rgba(0, 0, 0, 0.1); 
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
@@ -328,39 +301,41 @@ a {
 
 .feature-item {
   padding: 40px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  transition: var(--transition-normal);
+  transition: 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .feature-item:hover {
-  border-color: var(--border-color-hover);
+  border-color: rgba(255, 255, 255, 0.4); /* Borde más brillante */
   transform: translateY(-10px);
-  background-color: var(--bg-card-hover);
-  box-shadow: var(--shadow-lg);
+  background-color: rgba(255, 255, 255, 0.08); /* Fondo un poco más claro */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
 }
 
 .icon-box {
   width: 60px;
   height: 60px;
-  border: 2px solid var(--text-primary);
-  color: var(--text-primary);
+  border: 2px solid #ffffff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   border-radius: 50%;
   margin-bottom: 24px;
-  transition: var(--transition-normal);
+  transition: 0.3s ease;
 }
 
 .feature-item:hover .icon-box {
-  background-color: var(--text-primary);
-  color: var(--bg-dark-start);
+  background-color: #ffffff;
+  color: #1e1e1e; /* Color oscuro base de la web */
 }
 
 .feature-item h3 {
@@ -369,15 +344,15 @@ a {
 }
 
 .feature-item p {
-  color: var(--text-secondary);
+  color: #cccccc;
   font-size: 1.1rem;
   margin-bottom: 0;
 }
 
-
+/* --- 8. LLAMADA A LA ACCIÓN FINAL (FINAL CTA) --- */
 .final-cta {
   padding: 120px 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta-box {
@@ -386,11 +361,11 @@ a {
     rgba(255, 255, 255, 0.05),
     rgba(0, 0, 0, 0.2)
   );
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 80px 40px;
   border-radius: 24px;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta-box h2 {
@@ -402,13 +377,14 @@ a {
   font-size: 1.4rem;
   max-width: 600px;
   margin: 0 auto 40px;
-  color: var(--text-secondary);
+  color: #cccccc;
 }
 
+/* --- 9. PIE DE PÁGINA (FOOTER) --- */
 .main-footer {
   padding: 80px 0 40px 0;
   background-color: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-grid {
@@ -424,8 +400,10 @@ a {
 }
 
 .footer-brand p {
-  font-family: var(--font-sans);
-  color: var(--text-muted);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #999999;
   font-size: 0.95rem;
 }
 
@@ -436,37 +414,88 @@ a {
 }
 
 .link-group h4 {
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 24px;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .link-group a {
   display: block;
-  font-family: var(--font-sans);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   margin-bottom: 16px;
-  color: var(--text-muted);
+  color: #999999;
   font-size: 0.95rem;
 }
 
 .link-group a:hover {
-  color: var(--text-primary);
+  color: #ffffff;
   transform: translateX(4px);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 30px;
   text-align: center;
-  font-family: var(--font-sans);
-  color: var(--text-muted);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #999999;
   font-size: 0.85rem;
 }
 
-/*animacions*/
+/* Prevención de márgenes colapsados */
+.hero-content,
+.section-header,
+.cta-box {
+  overflow: hidden;
+}
+
+/* --- 10. ESTADOS DE SELECCIÓN Y SCROLL --- */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px dashed #ffffff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Mismo color oscuro del fondo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* --- 11. ANIMACIONES --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -485,206 +514,4 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-}
-
-
-.hero-content {
-  animation: slideUp 1s ease-out forwards;
-}
-
-.features-grid .feature-item:nth-child(1) {
-  animation: slideUp 0.8s ease-out 0.2s both;
-}
-.features-grid .feature-item:nth-child(2) {
-  animation: slideUp 0.8s ease-out 0.4s both;
-}
-.features-grid .feature-item:nth-child(3) {
-  animation: slideUp 0.8s ease-out 0.6s both;
-}
-
-
-/* Focus visible per a navegació per teclat */
-:focus {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 2px dashed var(--text-primary);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-::selection {
-  background-color: var(--text-primary);
-  color: var(--text-inverse);
-}
-
-::-moz-selection {
-  background-color: var(--text-primary);
-  color: var(--text-inverse);
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-dark-start);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/*Responsive*/
-
-/*1024px*/
-@media (max-width: 1024px) {
-  .main-title {
-    font-size: 3.5rem;
-  }
-
-  .cta-box h2 {
-    font-size: 2.8rem;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-links {
-    gap: 60px;
-  }
-}
-
-/* Tablets 768px */
-@media (max-width: 768px) {
-  .main-header {
-    height: 70px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero-section {
-    padding: 150px 0 80px 0;
-  }
-
-  .main-title {
-    font-size: 3rem;
-  }
-
-  .main-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .cta-box {
-    padding: 60px 24px;
-  }
-
-  .cta-box h2 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Mòbils Petits 480px */
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 2.5rem;
-  }
-
-  .cta-box h2 {
-    font-size: 1.8rem;
-  }
-
-  .feature-item {
-    padding: 24px;
-  }
-
-  .btn-primary,
-  .btn-secondary,
-  .btn-black,
-  .btn-white {
-    width: 100%;
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-
-.btn-black {
-  background-color: transparent;
-  border: 2px solid var(--btn-secondary-border);
-  color: var(--btn-secondary-text);
-}
-
-.btn-white {
-  /* Aquest actua com a Call To Action Principal */
-  background-color: var(--btn-primary-bg);
-  color: var(--btn-primary-text);
-  border: none;
-}
-
-.btn-full {
-  width: 80%;
-  margin: 10px auto;
-  display: block;
-}
-
-/* Prevenció de marges col·lapsats */
-.hero-content,
-.section-header,
-.cta-box {
-  overflow: hidden;
 }
