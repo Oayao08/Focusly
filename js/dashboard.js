@@ -1,8 +1,5 @@
 // Esperar a que todo el HTML cargue antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", function () {
-  // ==========================================
-  // 1. POMODORO (Temporizador)
-  // ==========================================
 
   let temporizador;
   let tiempoRestante = 25 * 60; // 25 minutos en segundos
@@ -30,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.title = tiempoFormateado + " - Focusly";
   }
 
-  // Iniciar o REANUDAR el temporizador
+  // Iniciar/continuarr  el temporizador
   function iniciarTemporizador() {
-    if (enMarcha) return; // Si ya está corriendo, no hacemos nada
+    if (enMarcha) return; // Si ya está corriendo, no hacer nada
 
     enMarcha = true;
     btnEmpezar.textContent = "Sessió en curs...";
@@ -45,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(temporizador);
         enMarcha = false;
         btnEmpezar.textContent = "Començar sessió";
-        alert("¡Sessió completada! Bona feina.");
+        alert("Sessió completada, Bona feina.");
       }
     }, 1000);
   }
@@ -103,10 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
       contenedorEtiquetas.insertBefore(nuevoBoton, btnNuevaEtiqueta);
     }
   });
-
-  // ==========================================
-  // 3. PESTAÑAS, TAREAS Y NOTAS (ESPACIO DE TRABAJO)
-  // ==========================================
 
   const pestanas = document.querySelectorAll(".tab");
   const workspaceContent = document.querySelector(".workspace-content");
@@ -188,14 +181,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 3.3. Lógica para crear tareas o notas nuevas
+  //Lógica para crear tareas o notas nuevas
   btnAfegir.addEventListener("click", function () {
     let texto = prompt(
       modoActual === "Tasques del dia" ? "Escriu la tasca:" : "Escriu la nota:",
     );
 
     if (texto && texto.trim() !== "") {
-      // Crear el elemento de la lista (<li>)
+      // Crear elemento de la lista
       let li = document.createElement("li");
       li.style.padding = "12px 0";
       li.style.borderBottom = "1px solid #eaeaea";
