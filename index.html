@@ -3,128 +3,245 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Focusly App</title>
+    <title>Focusly — Panell de Control</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
-  <body class="landing-page">
-    <header class="main-header">
+  <body class="landing-page dashboard-page">
+    <header class="main-header dashboard-header">
       <div class="container flex-header">
-        <a href="#main" class="logo">
-          <img src="assets/logo.png" alt="Focusly" />
-          <span>FOCUSLY</span>
-        </a>
+        <div class="brand">
+          <a href="index.html" class="logo" target="_blank">FOCUSLY</a>
+          <img src="assets/logo.png" alt="Logotip de la app Focusly" />
+        </div>
 
-        <nav class="nav-links" aria-label="Navegació principal">
-          <a href="nosaltres.html" target="_blank">Nosaltres</a>
-          <a href="privacitat.html" target="_blank">Privacitat</a>
-          <a href="contacte.html" target="_blank">Contacte</a>
+        <nav class="nav-links header-actions">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Mode Focus Actiu</span>
+          </div>
         </nav>
-
-        <a href="app.html" class="nav-btn-primary"> Versió de prova </a>
       </div>
     </header>
 
-    <main>
-      <section id="main" class="hero-section">
-        <div class="container">
-          <div class="hero-content">
-            <span class="badge">L'app #1 de productivitat en català</span>
-            <h1 class="main-title">
-              Menys soroll. <br />
-              Més resultats.
-            </h1>
-            <p class="main-subtitle">
-              L'eina de concentració definitiva dissenyada per a professionals
-              que busquen la màxima claredat mental.
-            </p>
-            <div class="cta-container">
-              <a href="login.html" class="btn-black" target="_blank"
-                >Comença ara — és gratis</a
+    <main
+      class="app-main container"
+      style="padding-top: 120px; padding-bottom: 60px"
+    >
+      <div class="dashboard-grid">
+        <aside class="sidebar">
+          <section class="feature-item widget timer-widget">
+            <header class="widget-header">
+              <h3 style="margin: 0; font-size: 1.2rem">Temporitzador</h3>
+              <button class="icon-btn" aria-label="Configuració">⚙️</button>
+            </header>
+
+            <section
+              class="feature-item widget distraction-widget"
+              style="margin-top: 20px"
+            >
+              <h3 style="margin-bottom: 15px; font-size: 1.2rem">
+                Control de Distraccions
+              </h3>
+              <div
+                class="status-badge"
+                style="
+                  background: #e8f5e9;
+                  color: #2e7d32;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  justify-content: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
               >
-              <p class="cta-note">
-                No cal targeta de crèdit. Instal·lació en 1 minut.
+                <span
+                  class="pulse-dot"
+                  style="background-color: #2e7d32"
+                ></span>
+                <span class="status-text" style="font-weight: bold"
+                  >📱 Mòbil Silenciat</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #666;
+                  margin-top: 10px;
+                  text-align: center;
+                "
+              >
+                Perfil actiu: <strong>Estil de vida saludable</strong>
               </p>
+            </section>
+
+            <div class="timer-display">
+              <span id="time-remaining" class="time-text">25:00</span>
+              <p class="timer-subtitle">Sessió de concentració</p>
+            </div>
+
+            <div class="cta-container">
+              <button id="start-btn" class="btn-white btn-full">
+                Començar sessió
+              </button>
+              <div class="timer-controls">
+                <button id="pause-btn" class="btn-secondary btn-sm">
+                  Pausa
+                </button>
+                <button id="reset-btn" class="btn-secondary btn-sm">
+                  Reiniciar
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="feature-item widget">
+            <h3 style="margin-bottom: 20px; font-size: 1.2rem">
+              Etiquetes de sessió
+            </h3>
+            <div class="tag-cloud">
+              <button class="badge active-tag">Treball</button>
+              <button class="badge">Estudi</button>
+              <button class="badge">Personal</button>
+              <button class="badge add-tag">+ Nova</button>
+            </div>
+          </section>
+
+          <section
+            class="feature-item widget harvard-insight-widget"
+            style="
+              margin-top: 20px;
+              border: 1px dashed #4a90e2;
+              background: #fafafa;
+            "
+          >
+            <header class="widget-header" style="margin-bottom: 8px">
+              <h3
+                style="
+                  margin: 0;
+                  font-size: 1rem;
+                  color: #4a90e2;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                💡 Harvard Science Insight
+              </h3>
+            </header>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: #333;
+                line-height: 1.4;
+                margin: 0;
+              "
+            >
+              "La teva creativitat augmenta un 31% quan el cervell funciona des
+              del positivisme en lloc de l'estrès."
+            </p>
+            <div style="margin-top: 8px; text-align: right">
+              <span
+                class="badge"
+                style="
+                  background: #e3f2fd;
+                  color: #0d47a1;
+                  font-size: 0.75rem;
+                  padding: 2px 8px;
+                "
+              >
+                Dr. Shawn Achor
+              </span>
+            </div>
+          </section>
+        </aside>
+
+        <section class="workspace">
+          <div class="feature-item workspace-card">
+            <header class="workspace-header">
+              <div class="header-tabs">
+                <div class="header-tabs">
+                  <button class="tab active-tab">Tasques del dia</button>
+                  <button class="tab">Notes ràpides</button>
+                  <button class="tab" style="color: #4a90e2">
+                    Pauses i Hàbits
+                  </button>
+                </div>
+                <div
+                  class="habit-break-panel"
+                  style="
+                    margin-top: 20px;
+                    padding: 15px;
+                    background: #f0f4f8;
+                    border-radius: 12px;
+                    border-left: 5px solid #4a90e2;
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 15px">
+                    <div>
+                      <h4 style="margin: 0; font-size: 1.1rem; color: #333">
+                        Pròxima Pausa Activa: Passeig de 10 min.
+                      </h4>
+                      <p
+                        style="
+                          margin: 5px 0 0 0;
+                          font-size: 0.9rem;
+                          color: #555;
+                        "
+                      >
+                        Segons el teu perfil, et toca desconnectar 10 minuts a l'aire lliure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <div class="workspace-content">
+              <div class="empty-state">
+                <div
+                  class="icon-box empty-icon"
+                  style="margin: 0 auto 20px auto"
+                >
+                  ✓
+                </div>
+                <h2 style="font-size: 2rem; margin-bottom: 10px">
+                  Tot en ordre
+                </h2>
+                <p>
+                  Encara no tens cap tasca programada per a aquesta sessió.
+                  Aprofita per planificar el teu dia amb claredat.
+                </p>
+                <button class="btn-secondary" style="margin-top: 15px">
+                  + Afegeix una tasca
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="features" class="features-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Dissenyada per al teu flux de treball</h2>
-          </div>
-          <div class="features-grid">
-            <article class="feature-item">
-              <div class="icon-box">01</div>
-              <h3>Silenci absolut</h3>
-              <p>
-                Gestió del temps optimitzada per mantenir la teva energia al
-                màxim durant tota la jornada. Eliminació de qualsevol distracció
-                en els estudis.
-              </p>
-            </article>
-            <article class="feature-item">
-              <div class="icon-box">02</div>
-              <h3>Interfície Invisible</h3>
-              <p>
-                Eliminem el desordre visual per permetre que la teva ment es
-                focalitzi en el que realment importa.
-              </p>
-            </article>
-            <article class="feature-item">
-              <div class="icon-box">03</div>
-              <h3>Anàlisi Local</h3>
-              <p>
-                Totes les teves dades i estadístiques en el teu idioma, amb
-                total privadesa i seguretat.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="benefits" class="final-cta">
-        <div class="container">
-          <div class="cta-box">
-            <h2>Estàs preparat per ser més productiu?</h2>
-            <p>
-              Uneix-te a milers d'usuaris que ja han optimitzat el seu temps amb
-              Focusly.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
-    <footer class="main-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <span class="logo">FOCUSLY</span>
-          <p>Productivitat conscient en català.</p>
+    <footer class="dashboard-footer">
+      <div class="container footer-flex">
+        <div class="footer-stats">
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Sessió:</strong> 0 / 4 completades</span
+          >
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Ratxa:</strong> 5 dies</span
+          >
         </div>
-        <div class="footer-links">
-          <div class="link-group">
-            <h4>Producte</h4>
-            <a href="#benefits">Beneficis</a>
-            <a href="#features">Métodes</a>
-          </div>
-          <div class="link-group">
-            <h4>Empresa</h4>
-            <a
-              href="nosaltres.html
-            "
-              >Sobre nosaltres</a
-            >
-            <a href="privacitat.html">Privadesa</a>
-            <a href="contacte.html">Contacte</a>
-          </div>
+        <div class="footer-legal">
+          <p style="margin: 0; font-size: 0.9rem">
+            &copy; 2026 Omar Ayaou - Focusly
+          </p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Omar Ayaou - Tots els drets reservats.</p>
       </div>
     </footer>
+
+    <script src="js/dashboard.js"></script>
   </body>
 </html>

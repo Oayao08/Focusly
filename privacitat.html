@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focusly — Panell de Control</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/dashboard.css" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body class="landing-page dashboard-page">
-
     <!-- ========================================================
          HEADER
          Classes: .main-header · .container · .flex-header
@@ -17,7 +15,6 @@
     ========================================================= -->
     <header class="main-header">
       <div class="container flex-header">
-
         <div class="brand-wrap">
           <a href="index.html" class="logo">FOCUSLY</a>
           <img src="assets/logo.png" alt="Logotip Focusly" />
@@ -29,24 +26,18 @@
             <span class="status-text">Mode Focus Actiu</span>
           </div>
         </nav>
-
       </div>
     </header>
-
 
     <!-- ========================================================
          MAIN — grid de dues columnes: sidebar + workspace
     ========================================================= -->
     <main class="dashboard-main container">
       <div class="dashboard-grid">
-
-
         <!-- ====================================================
              SIDEBAR
         ===================================================== -->
         <aside class="sidebar">
-
-
           <!-- --------------------------------------------------
                TEMPORITZADOR
                .feature-item → widget fosc amb border i hover
@@ -57,23 +48,42 @@
                .badge        → etiqueta de fase
           --------------------------------------------------- -->
           <section class="feature-item timer-widget">
-
             <header class="widget-header">
               <h3>Temporitzador Pomodoro</h3>
-              <button class="icon-btn" id="settings-btn" aria-label="Configuració">⚙️</button>
+              <button
+                class="icon-btn"
+                id="settings-btn"
+                aria-label="Configuració"
+              >
+                ⚙️
+              </button>
             </header>
 
             <div class="timer-ring-wrap">
               <div class="timer-ring">
                 <svg viewBox="0 0 160 160" width="160" height="160" fill="none">
-                  <circle cx="80" cy="80" r="70"
-                    stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
-                  <circle id="ring-progress" cx="80" cy="80" r="70"
-                    stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                  <circle
+                    cx="80"
+                    cy="80"
+                    r="70"
+                    stroke="rgba(255,255,255,0.08)"
+                    stroke-width="8"
+                  />
+                  <circle
+                    id="ring-progress"
+                    cx="80"
+                    cy="80"
+                    r="70"
+                    stroke="#ffffff"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                  />
                 </svg>
                 <div class="timer-center">
                   <span id="time-remaining" class="time-text">25:00</span>
-                  <span class="timer-subtitle" id="timer-label">concentració</span>
+                  <span class="timer-subtitle" id="timer-label"
+                    >concentració</span
+                  >
                 </div>
               </div>
 
@@ -94,13 +104,15 @@
                 Començar sessió
               </button>
               <div class="timer-btns-row">
-                <button id="pause-btn" class="btn-secondary btn-sm">⏸ Pausa</button>
-                <button id="reset-btn" class="btn-secondary btn-sm">↺ Reiniciar</button>
+                <button id="pause-btn" class="btn-secondary btn-sm">
+                  ⏸ Pausa
+                </button>
+                <button id="reset-btn" class="btn-secondary btn-sm">
+                  ↺ Reiniciar
+                </button>
               </div>
             </div>
-
           </section>
-
 
           <!-- --------------------------------------------------
                CONTROL DE DISTRACCIONS
@@ -108,7 +120,6 @@
                .badge        → etiqueta d'estat (reutilitzada)
           --------------------------------------------------- -->
           <section class="feature-item distraction-widget">
-
             <header class="widget-header">
               <h3>Control de Distraccions</h3>
             </header>
@@ -126,12 +137,11 @@
               <span class="badge badge-mid">Prioritat</span>
             </div>
 
-            <p class="cta-note" style="margin-top:14px;">
-              Perfil actiu: <strong style="color:#ffffff;">Estil de vida saludable</strong>
+            <p class="cta-note" style="margin-top: 14px">
+              Perfil actiu:
+              <strong style="color: #ffffff">Estil de vida saludable</strong>
             </p>
-
           </section>
-
 
           <!-- --------------------------------------------------
                ESTAT EMOCIONAL
@@ -139,7 +149,6 @@
                .cta-note     → text petit apagat (del hero)
           --------------------------------------------------- -->
           <section class="feature-item mood-widget">
-
             <header class="widget-header">
               <h3>Estat emocional</h3>
             </header>
@@ -147,17 +156,23 @@
             <p class="cta-note">Com et trobes ara mateix?</p>
 
             <div class="mood-row">
-              <button class="mood-btn" data-mood="Cansat"    title="Cansat">😴</button>
-              <button class="mood-btn" data-mood="Estressat" title="Estressat">😰</button>
-              <button class="mood-btn" data-mood="Neutre"    title="Neutre">😐</button>
-              <button class="mood-btn" data-mood="Bé"        title="Bé">🙂</button>
-              <button class="mood-btn" data-mood="Motivat"   title="Motivat">🚀</button>
+              <button class="mood-btn" data-mood="Cansat" title="Cansat">
+                😴
+              </button>
+              <button class="mood-btn" data-mood="Estressat" title="Estressat">
+                😰
+              </button>
+              <button class="mood-btn" data-mood="Neutre" title="Neutre">
+                😐
+              </button>
+              <button class="mood-btn" data-mood="Bé" title="Bé">🙂</button>
+              <button class="mood-btn" data-mood="Motivat" title="Motivat">
+                🚀
+              </button>
             </div>
 
             <p id="mood-feedback" class="cta-note mood-feedback"></p>
-
           </section>
-
 
           <!-- --------------------------------------------------
                HARVARD INSIGHT
@@ -165,7 +180,6 @@
                .badge        → autor com a pill
           --------------------------------------------------- -->
           <section class="feature-item insight-widget">
-
             <header class="widget-header">
               <h3>💡 Harvard Science Insight</h3>
             </header>
@@ -178,9 +192,7 @@
             <span id="insight-author" class="badge insight-author-badge">
               Dr. Shawn Achor
             </span>
-
           </section>
-
 
           <!-- --------------------------------------------------
                ETIQUETES DE SESSIÓ
@@ -188,7 +200,6 @@
                .badge        → cada etiqueta (ja és pill al CSS)
           --------------------------------------------------- -->
           <section class="feature-item">
-
             <header class="widget-header">
               <h3>Etiquetes de sessió</h3>
             </header>
@@ -199,12 +210,9 @@
               <button class="badge">Personal</button>
               <button class="badge add-tag">+ Nova</button>
             </div>
-
           </section>
-
-
-        </aside><!-- /sidebar -->
-
+        </aside>
+        <!-- /sidebar -->
 
         <!-- ====================================================
              WORKSPACE
@@ -213,21 +221,19 @@
         ===================================================== -->
         <section class="workspace">
           <div class="cta-box workspace-card">
-
-
             <!-- TAB BAR -->
             <div class="tab-bar">
-              <button class="tab active-tab" data-tab="tasques">Tasques del dia</button>
+              <button class="tab active-tab" data-tab="tasques">
+                Tasques del dia
+              </button>
               <button class="tab" data-tab="notes">Notes ràpides</button>
               <button class="tab" data-tab="habits">Pauses i Hàbits</button>
             </div>
-
 
             <!-- ------------------------------------------------
                  TAB: TASQUES
             ------------------------------------------------- -->
             <div id="tab-tasques" class="workspace-body">
-
               <div class="health-grid">
                 <div class="health-metric">
                   <div class="metric-val" id="tasques-count">0</div>
@@ -240,7 +246,10 @@
                   <div class="metric-val" id="tasques-done">0</div>
                   <div class="metric-lbl">Completades</div>
                   <div class="progress-bar-wrap">
-                    <div class="progress-bar progress-bar-done" id="done-bar"></div>
+                    <div
+                      class="progress-bar progress-bar-done"
+                      id="done-bar"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -251,40 +260,45 @@
               <div class="section-header empty-state" id="empty-tasques">
                 <div class="icon-box empty-icon">✓</div>
                 <h2>Tot en ordre</h2>
-                <p>Encara no tens tasques per a aquesta sessió.<br>
-                   Comença planificant el teu dia.</p>
+                <p>
+                  Encara no tens tasques per a aquesta sessió.<br />
+                  Comença planificant el teu dia.
+                </p>
               </div>
 
               <div class="inline-add">
-                <input type="text" id="task-input"
-                  placeholder="Escriu una tasca i prem Afegir…" />
+                <input
+                  type="text"
+                  id="task-input"
+                  placeholder="Escriu una tasca i prem Afegir…"
+                />
                 <button id="add-task-btn" class="btn-white">Afegir</button>
               </div>
-
             </div>
-
 
             <!-- ------------------------------------------------
                  TAB: NOTES
             ------------------------------------------------- -->
             <div id="tab-notes" class="workspace-body tab-hidden">
-
               <ul class="task-list" id="note-list"></ul>
 
               <div class="section-header empty-state" id="empty-notes">
                 <div class="icon-box empty-icon">📝</div>
                 <h2>Sense notes</h2>
-                <p>Captura idees, reflexions o recordatoris mentre treballes.</p>
+                <p>
+                  Captura idees, reflexions o recordatoris mentre treballes.
+                </p>
               </div>
 
               <div class="inline-add">
-                <input type="text" id="note-input"
-                  placeholder="Escriu una nota i prem Afegir…" />
+                <input
+                  type="text"
+                  id="note-input"
+                  placeholder="Escriu una nota i prem Afegir…"
+                />
                 <button id="add-note-btn" class="btn-white">Afegir</button>
               </div>
-
             </div>
-
 
             <!-- ------------------------------------------------
                  TAB: PAUSES I HÀBITS
@@ -293,62 +307,65 @@
                  .badge        → estat de l'hàbit
             ------------------------------------------------- -->
             <div id="tab-habits" class="workspace-body tab-hidden">
-
-              <p class="cta-note" style="margin-bottom:24px;">
+              <p class="cta-note" style="margin-bottom: 24px">
                 Basades en el teu perfil
-                <strong style="color:#ffffff;">Estil de vida saludable</strong>
+                <strong style="color: #ffffff">Estil de vida saludable</strong>
                 i la ciència de Harvard.
               </p>
 
               <div class="features-grid habits-grid">
-
                 <div class="feature-item habit-card">
                   <div class="icon-box habit-icon">🚶</div>
                   <h4>Passeig actiu de 10 min</h4>
-                  <p>Redueix el cortisol un 15% i millora la concentració posterior.</p>
+                  <p>
+                    Redueix el cortisol un 15% i millora la concentració
+                    posterior.
+                  </p>
                   <span class="badge badge-mid">Pròxima pausa</span>
                 </div>
 
                 <div class="feature-item habit-card">
                   <div class="icon-box habit-icon">🫁</div>
                   <h4>Respiració 4-7-8</h4>
-                  <p>Tres cicles per activar el sistema nerviós parasimpàtic.</p>
+                  <p>
+                    Tres cicles per activar el sistema nerviós parasimpàtic.
+                  </p>
                   <span class="badge badge-on">Completada avui</span>
                 </div>
 
                 <div class="feature-item habit-card">
                   <div class="icon-box habit-icon">💧</div>
                   <h4>Hidratació cada hora</h4>
-                  <p>Una deshidratació del 2% redueix el rendiment cognitiu un 20%.</p>
+                  <p>
+                    Una deshidratació del 2% redueix el rendiment cognitiu un
+                    20%.
+                  </p>
                   <span class="badge badge-mid">Pendent</span>
                 </div>
-
               </div>
-
             </div>
-
-
-          </div><!-- /cta-box workspace-card -->
-        </section><!-- /workspace -->
-
-
-      </div><!-- /dashboard-grid -->
+          </div>
+          <!-- /cta-box workspace-card -->
+        </section>
+        <!-- /workspace -->
+      </div>
+      <!-- /dashboard-grid -->
     </main>
 
-
-    <!-- ========================================================
-         FOOTER
-         Classes: .main-footer · .container · .footer-bottom
-    ========================================================= -->
     <footer class="main-footer dashboard-footer">
       <div class="container">
         <div class="footer-stats-row">
           <div class="footer-stats">
             <span class="badge">
-              <strong>Sessió:</strong>&nbsp;<span id="footer-sessions">0</span>&nbsp;/ 4
+              <strong>Sessió:</strong>&nbsp;<span id="footer-sessions">0</span
+              >&nbsp;/ 4
             </span>
-            <span class="badge">🔥 <strong>Ratxa:</strong>&nbsp;5 dies</span>
-            <span class="badge" id="footer-mood-chip" style="display:none;"></span>
+            <span class="badge"> <strong>Ratxa:</strong>&nbsp;5 dies</span>
+            <span
+              class="badge"
+              id="footer-mood-chip"
+              style="display: none"
+            ></span>
           </div>
         </div>
         <div class="footer-bottom">
@@ -356,7 +373,6 @@
         </div>
       </div>
     </footer>
-
 
     <script src="js/dashboard.js"></script>
   </body>
