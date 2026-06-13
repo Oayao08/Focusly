@@ -37,6 +37,46 @@
               <button class="icon-btn" aria-label="Configuració">⚙️</button>
             </header>
 
+            <section
+              class="feature-item widget distraction-widget"
+              style="margin-top: 20px"
+            >
+              <h3 style="margin-bottom: 15px; font-size: 1.2rem">
+                Control de Distraccions
+              </h3>
+              <div
+                class="status-badge"
+                style="
+                  background: #e8f5e9;
+                  color: #2e7d32;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  justify-content: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  class="pulse-dot"
+                  style="background-color: #2e7d32"
+                ></span>
+                <span class="status-text" style="font-weight: bold"
+                  >📱 Mòbil Silenciat</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #666;
+                  margin-top: 10px;
+                  text-align: center;
+                "
+              >
+                Perfil actiu: <strong>Estil de vida saludable</strong>
+              </p>
+            </section>
+
             <div class="timer-display">
               <span id="time-remaining" class="time-text">25:00</span>
               <p class="timer-subtitle">Sessió de concentració</p>
@@ -68,14 +108,94 @@
               <button class="badge add-tag">+ Nova</button>
             </div>
           </section>
+
+          <section
+            class="feature-item widget harvard-insight-widget"
+            style="
+              margin-top: 20px;
+              border: 1px dashed #4a90e2;
+              background: #fafafa;
+            "
+          >
+            <header class="widget-header" style="margin-bottom: 8px">
+              <h3
+                style="
+                  margin: 0;
+                  font-size: 1rem;
+                  color: #4a90e2;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                💡 Harvard Science Insight
+              </h3>
+            </header>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: #333;
+                line-height: 1.4;
+                margin: 0;
+              "
+            >
+              "La teva creativitat augmenta un 31% quan el cervell funciona des
+              del positivisme en lloc de l'estrès."
+            </p>
+            <div style="margin-top: 8px; text-align: right">
+              <span
+                class="badge"
+                style="
+                  background: #e3f2fd;
+                  color: #0d47a1;
+                  font-size: 0.75rem;
+                  padding: 2px 8px;
+                "
+              >
+                Dr. Shawn Achor
+              </span>
+            </div>
+          </section>
         </aside>
 
         <section class="workspace">
           <div class="feature-item workspace-card">
             <header class="workspace-header">
               <div class="header-tabs">
-                <button class="tab active-tab">Tasques del dia</button>
-                <button class="tab">Notes ràpides</button>
+                <div class="header-tabs">
+                  <button class="tab active-tab">Tasques del dia</button>
+                  <button class="tab">Notes ràpides</button>
+                  <button class="tab" style="color: #4a90e2">
+                    Pauses i Hàbits
+                  </button>
+                </div>
+                <div
+                  class="habit-break-panel"
+                  style="
+                    margin-top: 20px;
+                    padding: 15px;
+                    background: #f0f4f8;
+                    border-radius: 12px;
+                    border-left: 5px solid #4a90e2;
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 15px">
+                    <div>
+                      <h4 style="margin: 0; font-size: 1.1rem; color: #333">
+                        Pròxima Pausa Activa: Passeig de 10 min.
+                      </h4>
+                      <p
+                        style="
+                          margin: 5px 0 0 0;
+                          font-size: 0.9rem;
+                          color: #555;
+                        "
+                      >
+                        Segons el teu perfil, et toca desconnectar 10 minuts a l'aire lliure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </header>
 

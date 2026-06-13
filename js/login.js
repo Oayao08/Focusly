@@ -20,7 +20,7 @@ async function handleRegister() {
     password,
     options: {
       emailRedirectTo:
-        "https://automatic-guide-g46xg5wvvgwx2w6j-5501.app.github.dev/app/index.html",
+        "https://focusly-app-azure.vercel.app/app.html",
     },
   });
 
