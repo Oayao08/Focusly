@@ -1,6 +1,5 @@
 // Esperar a que todo el HTML cargue antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", function () {
-
   let temporizador;
   let tiempoRestante = 25 * 60; // 25 minutos en segundos
   let enMarcha = false;
@@ -138,16 +137,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (itemsActuales === 0) {
       emptyState.style.display = "block"; // Mostrar diseño vacío
+      // Mostrar la lista o panel correcto según la pestaña pulsada
+      const panelHabits = document.querySelector(".habit-break-panel"); // El panel que creamos en el HTML
+
       if (modoActual === "Tasques del dia") {
-        emptyTitulo.textContent = "Tot en ordre";
-        emptyTexto.textContent =
-          "Encara no tens cap tasca programada per a aquesta sessió. Aprofita per planificar el teu dia amb claredat.";
-        btnAfegir.textContent = "+ Afegeix una tasca";
+        llistaTasques.style.display = "block";
+        llistaNotes.style.display = "none";
+        if (panelHabits) panelHabits.style.display = "none";
+      } else if (modoActual === "Notes ràpides") {
+        llistaTasques.style.display = "none";
+        llistaNotes.style.display = "block";
+        if (panelHabits) panelHabits.style.display = "none";
       } else {
-        emptyTitulo.textContent = "Notes ràpides";
-        emptyTexto.textContent =
-          "Aquest és un espai lliure per apuntar idees, recordatoris o distraccions durant la teva sessió.";
-        btnAfegir.textContent = "+ Afegeix una nota";
+        // Si hace clic en " Pauses i Hàbits"
+        llistaTasques.style.display = "none";
+        llistaNotes.style.display = "none";
+        if (panelHabits) panelHabits.style.display = "block"; // Mostramos el bloque del "Ball Llarg"
       }
     } else {
       emptyState.style.display = "none"; // Ocultar diseño vacío si ya hay cosas

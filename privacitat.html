@@ -1,135 +1,363 @@
 <!doctype html>
 <html lang="ca">
   <head>
-    <meta charset />
-    ="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de Privacitat - Focusly</title>
+    <title>Focusly — Panell de Control</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
-  <body class="landing-page">
+  <body class="landing-page dashboard-page">
+
+    <!-- ========================================================
+         HEADER
+         Classes: .main-header · .container · .flex-header
+                  .logo · .nav-links · .badge
+    ========================================================= -->
     <header class="main-header">
       <div class="container flex-header">
-        <div class="logo">Focusly</div>
-        <img src="assets/logo.png" alt="Logotip de la app Focusly" />
-        <nav class="nav-links">
-          <a href="index.html" target="_blank">Inici</a>
-          <a href="nosaltres.html" target="_blank">Nosaltres</a>
-          <a href="privacitat.html" target="_blank">Privacitat</a>
-          <a href="contacte.html" target="_blank">Contacte</a>
-          <a href="app.html" class="nav-btn-primary">Accedir</a>
+
+        <div class="brand-wrap">
+          <a href="index.html" class="logo">FOCUSLY</a>
+          <img src="assets/logo.png" alt="Logotip Focusly" />
+        </div>
+
+        <nav class="nav-links header-actions">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Mode Focus Actiu</span>
+          </div>
         </nav>
+
       </div>
     </header>
 
-    <main
-      class="container-narrow"
-      style="padding-top: 150px; padding-bottom: 100px"
-    >
-      <h1 class="main-title" style="font-size: 3.5rem; margin-bottom: 40px">
-        Política de Privacitat
-      </h1>
 
-      <p><strong>Última actualització:</strong> 2 de Maig de 2026</p>
+    <!-- ========================================================
+         MAIN — grid de dues columnes: sidebar + workspace
+    ========================================================= -->
+    <main class="dashboard-main container">
+      <div class="dashboard-grid">
 
-      <p>
-        Aquesta Política de Privacitat descriu com recollim, utilitzem i
-        compartim la teva informació personal quan visites el nostre lloc web o
-        fas ús de la nostra aplicació demo. Ens prenem la teva privacitat molt
-        seriosament (encara que això només sigui un projecte de prova).
-      </p>
 
-      <h2 style="margin-top: 40px">1. Informació que recollim</h2>
-      <p>
-        Quan visites el lloc web, podem recollir automàticament certa informació
-        sobre el teu dispositiu, incloent-hi informació sobre el teu navegador
-        web, adreça IP, zona horària i algunes de les galetes (cookies) que
-        estan instal·lades al teu dispositiu.
-      </p>
+        <!-- ====================================================
+             SIDEBAR
+        ===================================================== -->
+        <aside class="sidebar">
 
-      <ul>
-        <li style="color: var(--text-secondary); margin-bottom: 10px">
-          <strong>Dades de contacte:</strong> Nom, adreça de correu electrònic
-          si omples el formulari de contacte.
-        </li>
-        <li style="color: var(--text-secondary); margin-bottom: 10px">
-          <strong>Dades d'ús:</strong> Informació sobre com interactues amb la
-          nostra interfície.
-        </li>
-      </ul>
 
-      <h2 style="margin-top: 40px">2. Com utilitzem la teva informació</h2>
-      <p>
-        Utilitzem la informació que recollim de diverses maneres, incloent-hi:
-      </p>
-      <ul>
-        <li style="color: var(--text-secondary); margin-bottom: 10px">
-          Proporcionar, operar i mantenir el nostre lloc web.
-        </li>
-        <li style="color: var(--text-secondary); margin-bottom: 10px">
-          Millorar i personalitzar l'experiència de l'usuari.
-        </li>
-        <li style="color: var(--text-secondary); margin-bottom: 10px">
-          Entendre i analitzar com utilitzes la nostra plataforma.
-        </li>
-      </ul>
+          <!-- --------------------------------------------------
+               TEMPORITZADOR
+               .feature-item → widget fosc amb border i hover
+               .icon-box     → cercle blanc per al rellotge SVG
+               .cta-container → columna centrada (del hero)
+               .btn-white / .btn-secondary → botons del CSS
+               .btn-full     → amplada 80% centrat
+               .badge        → etiqueta de fase
+          --------------------------------------------------- -->
+          <section class="feature-item timer-widget">
 
-      <h2 style="margin-top: 40px">3. Galetes (Cookies)</h2>
-      <p>
-        Utilitzem galetes per rastrejar l'activitat al nostre servei i retenir
-        certa informació. Pots indicar al teu navegador que rebutgi totes les
-        galetes o que indiqui quan s'està enviant una galeta. No obstant això,
-        si no acceptes les galetes, és possible que no puguis utilitzar algunes
-        parts del nostre servei.
-      </p>
+            <header class="widget-header">
+              <h3>Temporitzador Pomodoro</h3>
+              <button class="icon-btn" id="settings-btn" aria-label="Configuració">⚙️</button>
+            </header>
 
-      <h2 style="margin-top: 40px">4. Els teus drets</h2>
-      <p>
-        Si ets resident europeu, tens dret a accedir a la informació personal
-        que tenim sobre tu i a demanar que la teva informació personal sigui
-        corregida, actualitzada o eliminada. Si vols exercir aquest dret, si us
-        plau, posa't en contacte amb nosaltres a través de la secció de
-        contacte.
-      </p>
+            <div class="timer-ring-wrap">
+              <div class="timer-ring">
+                <svg viewBox="0 0 160 160" width="160" height="160" fill="none">
+                  <circle cx="80" cy="80" r="70"
+                    stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+                  <circle id="ring-progress" cx="80" cy="80" r="70"
+                    stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                <div class="timer-center">
+                  <span id="time-remaining" class="time-text">25:00</span>
+                  <span class="timer-subtitle" id="timer-label">concentració</span>
+                </div>
+              </div>
 
-      <div style="margin-top: 60px; text-align: center">
-        <a href="../index.html" class="btn-secondary">Tornar a l'Inici</a>
-      </div>
+              <span class="badge session-phase-badge" id="session-phase">
+                Sessió de treball
+              </span>
+            </div>
+
+            <div class="session-dots">
+              <div class="session-dot" id="dot-0"></div>
+              <div class="session-dot" id="dot-1"></div>
+              <div class="session-dot" id="dot-2"></div>
+              <div class="session-dot" id="dot-3"></div>
+            </div>
+
+            <div class="cta-container">
+              <button id="start-btn" class="btn-white btn-full">
+                Començar sessió
+              </button>
+              <div class="timer-btns-row">
+                <button id="pause-btn" class="btn-secondary btn-sm">⏸ Pausa</button>
+                <button id="reset-btn" class="btn-secondary btn-sm">↺ Reiniciar</button>
+              </div>
+            </div>
+
+          </section>
+
+
+          <!-- --------------------------------------------------
+               CONTROL DE DISTRACCIONS
+               .feature-item → widget fosc
+               .badge        → etiqueta d'estat (reutilitzada)
+          --------------------------------------------------- -->
+          <section class="feature-item distraction-widget">
+
+            <header class="widget-header">
+              <h3>Control de Distraccions</h3>
+            </header>
+
+            <div class="distraction-row">
+              <span>📱 Mòbil</span>
+              <span class="badge badge-on">Silenciat</span>
+            </div>
+            <div class="distraction-row">
+              <span>🌐 Webs bloquejats</span>
+              <span class="badge badge-on">Actiu</span>
+            </div>
+            <div class="distraction-row">
+              <span>🔔 Notificacions</span>
+              <span class="badge badge-mid">Prioritat</span>
+            </div>
+
+            <p class="cta-note" style="margin-top:14px;">
+              Perfil actiu: <strong style="color:#ffffff;">Estil de vida saludable</strong>
+            </p>
+
+          </section>
+
+
+          <!-- --------------------------------------------------
+               ESTAT EMOCIONAL
+               .feature-item → widget fosc
+               .cta-note     → text petit apagat (del hero)
+          --------------------------------------------------- -->
+          <section class="feature-item mood-widget">
+
+            <header class="widget-header">
+              <h3>Estat emocional</h3>
+            </header>
+
+            <p class="cta-note">Com et trobes ara mateix?</p>
+
+            <div class="mood-row">
+              <button class="mood-btn" data-mood="Cansat"    title="Cansat">😴</button>
+              <button class="mood-btn" data-mood="Estressat" title="Estressat">😰</button>
+              <button class="mood-btn" data-mood="Neutre"    title="Neutre">😐</button>
+              <button class="mood-btn" data-mood="Bé"        title="Bé">🙂</button>
+              <button class="mood-btn" data-mood="Motivat"   title="Motivat">🚀</button>
+            </div>
+
+            <p id="mood-feedback" class="cta-note mood-feedback"></p>
+
+          </section>
+
+
+          <!-- --------------------------------------------------
+               HARVARD INSIGHT
+               .feature-item → widget fosc
+               .badge        → autor com a pill
+          --------------------------------------------------- -->
+          <section class="feature-item insight-widget">
+
+            <header class="widget-header">
+              <h3>💡 Harvard Science Insight</h3>
+            </header>
+
+            <p id="insight-text" class="insight-quote">
+              "La creativitat augmenta un 31% quan el cervell opera des del
+              positivisme en lloc de l'estrès."
+            </p>
+
+            <span id="insight-author" class="badge insight-author-badge">
+              Dr. Shawn Achor
+            </span>
+
+          </section>
+
+
+          <!-- --------------------------------------------------
+               ETIQUETES DE SESSIÓ
+               .feature-item → widget fosc
+               .badge        → cada etiqueta (ja és pill al CSS)
+          --------------------------------------------------- -->
+          <section class="feature-item">
+
+            <header class="widget-header">
+              <h3>Etiquetes de sessió</h3>
+            </header>
+
+            <div class="tag-cloud" id="tag-cloud">
+              <button class="badge active-tag">Treball</button>
+              <button class="badge">Estudi</button>
+              <button class="badge">Personal</button>
+              <button class="badge add-tag">+ Nova</button>
+            </div>
+
+          </section>
+
+
+        </aside><!-- /sidebar -->
+
+
+        <!-- ====================================================
+             WORKSPACE
+             .cta-box → contenidor principal (fons gradiant,
+                        border, border-radius 24px)
+        ===================================================== -->
+        <section class="workspace">
+          <div class="cta-box workspace-card">
+
+
+            <!-- TAB BAR -->
+            <div class="tab-bar">
+              <button class="tab active-tab" data-tab="tasques">Tasques del dia</button>
+              <button class="tab" data-tab="notes">Notes ràpides</button>
+              <button class="tab" data-tab="habits">Pauses i Hàbits</button>
+            </div>
+
+
+            <!-- ------------------------------------------------
+                 TAB: TASQUES
+            ------------------------------------------------- -->
+            <div id="tab-tasques" class="workspace-body">
+
+              <div class="health-grid">
+                <div class="health-metric">
+                  <div class="metric-val" id="tasques-count">0</div>
+                  <div class="metric-lbl">Tasques avui</div>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="tasques-bar"></div>
+                  </div>
+                </div>
+                <div class="health-metric">
+                  <div class="metric-val" id="tasques-done">0</div>
+                  <div class="metric-lbl">Completades</div>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar progress-bar-done" id="done-bar"></div>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="task-list" id="task-list"></ul>
+
+              <!-- Empty state: .section-header + .icon-box del CSS -->
+              <div class="section-header empty-state" id="empty-tasques">
+                <div class="icon-box empty-icon">✓</div>
+                <h2>Tot en ordre</h2>
+                <p>Encara no tens tasques per a aquesta sessió.<br>
+                   Comença planificant el teu dia.</p>
+              </div>
+
+              <div class="inline-add">
+                <input type="text" id="task-input"
+                  placeholder="Escriu una tasca i prem Afegir…" />
+                <button id="add-task-btn" class="btn-white">Afegir</button>
+              </div>
+
+            </div>
+
+
+            <!-- ------------------------------------------------
+                 TAB: NOTES
+            ------------------------------------------------- -->
+            <div id="tab-notes" class="workspace-body tab-hidden">
+
+              <ul class="task-list" id="note-list"></ul>
+
+              <div class="section-header empty-state" id="empty-notes">
+                <div class="icon-box empty-icon">📝</div>
+                <h2>Sense notes</h2>
+                <p>Captura idees, reflexions o recordatoris mentre treballes.</p>
+              </div>
+
+              <div class="inline-add">
+                <input type="text" id="note-input"
+                  placeholder="Escriu una nota i prem Afegir…" />
+                <button id="add-note-btn" class="btn-white">Afegir</button>
+              </div>
+
+            </div>
+
+
+            <!-- ------------------------------------------------
+                 TAB: PAUSES I HÀBITS
+                 .feature-item → cada hàbit com a widget fosc
+                 .icon-box     → icona circular
+                 .badge        → estat de l'hàbit
+            ------------------------------------------------- -->
+            <div id="tab-habits" class="workspace-body tab-hidden">
+
+              <p class="cta-note" style="margin-bottom:24px;">
+                Basades en el teu perfil
+                <strong style="color:#ffffff;">Estil de vida saludable</strong>
+                i la ciència de Harvard.
+              </p>
+
+              <div class="features-grid habits-grid">
+
+                <div class="feature-item habit-card">
+                  <div class="icon-box habit-icon">🚶</div>
+                  <h4>Passeig actiu de 10 min</h4>
+                  <p>Redueix el cortisol un 15% i millora la concentració posterior.</p>
+                  <span class="badge badge-mid">Pròxima pausa</span>
+                </div>
+
+                <div class="feature-item habit-card">
+                  <div class="icon-box habit-icon">🫁</div>
+                  <h4>Respiració 4-7-8</h4>
+                  <p>Tres cicles per activar el sistema nerviós parasimpàtic.</p>
+                  <span class="badge badge-on">Completada avui</span>
+                </div>
+
+                <div class="feature-item habit-card">
+                  <div class="icon-box habit-icon">💧</div>
+                  <h4>Hidratació cada hora</h4>
+                  <p>Una deshidratació del 2% redueix el rendiment cognitiu un 20%.</p>
+                  <span class="badge badge-mid">Pendent</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div><!-- /cta-box workspace-card -->
+        </section><!-- /workspace -->
+
+
+      </div><!-- /dashboard-grid -->
     </main>
 
-    <footer class="main-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <span class="logo">Projecte</span>
-            <p>
-              Creat per aprendre i millorar en el desenvolupament web. Aquest és
-              un projecte de demostració.
-            </p>
-          </div>
 
-          <div class="footer-links">
-            <div class="link-group">
-              <h4>Navegació</h4>
-              <a href="../index.html">Inici</a>
-              <a href="nosaltres.html">Sobre Nosaltres</a>
-              <a href="contacte.html">Contacte</a>
-            </div>
-            <div class="link-group">
-              <h4>Legal</h4>
-              <a href="privacitat.html" style="color: var(--text-primary)"
-                >Privacitat</a
-              >
-              <a href="#">Termes d'Ús</a>
-            </div>
+    <!-- ========================================================
+         FOOTER
+         Classes: .main-footer · .container · .footer-bottom
+    ========================================================= -->
+    <footer class="main-footer dashboard-footer">
+      <div class="container">
+        <div class="footer-stats-row">
+          <div class="footer-stats">
+            <span class="badge">
+              <strong>Sessió:</strong>&nbsp;<span id="footer-sessions">0</span>&nbsp;/ 4
+            </span>
+            <span class="badge">🔥 <strong>Ratxa:</strong>&nbsp;5 dies</span>
+            <span class="badge" id="footer-mood-chip" style="display:none;"></span>
           </div>
         </div>
-
         <div class="footer-bottom">
-          &copy; 2026 Omar Ayaou - Tots els drets reservats.
+          <p>&copy; 2026 Omar Ayaou — Focusly</p>
         </div>
       </div>
     </footer>
+
+
+    <script src="js/dashboard.js"></script>
   </body>
 </html>
