@@ -4,323 +4,230 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focusly — Panell de Control</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
-  <body>
-    <header class="main-header">
-      <div class="flex-header">
+  <body class="landing-page dashboard-page">
+    <header class="main-header dashboard-header">
+      <div class="container flex-header">
         <div class="brand">
-          <a href="index.html" class="logo">FOCUSLY</a>
+          <a href="index.html" class="logo" target="_blank">FOCUSLY</a>
+          <img src="assets/logo.png" alt="Logotip de la app Focusly" />
         </div>
-        <nav>
+
+        <nav class="nav-links header-actions">
           <div class="status-badge">
             <span class="pulse-dot"></span>
-            <span>Mode Focus Actiu</span>
+            <span class="status-text">Mode Focus Actiu</span>
           </div>
         </nav>
       </div>
     </header>
 
-    <main class="app-main">
+    <main
+      class="app-main container"
+      style="padding-top: 120px; padding-bottom: 60px"
+    >
       <div class="dashboard-grid">
         <aside class="sidebar">
-          <!-- Timer widget -->
-          <div class="widget">
-            <div class="widget-header">
-              <span class="widget-title">Temporitzador Pomodoro</span>
-              <button class="icon-btn" id="settings-btn" title="Configuració">
-                ⚙️
-              </button>
-            </div>
+          <section class="feature-item widget timer-widget">
+            <header class="widget-header">
+              <h3 style="margin: 0; font-size: 1.2rem">Temporitzador</h3>
+              <button class="icon-btn" aria-label="Configuració">⚙️</button>
+            </header>
 
-            <div class="timer-ring-wrap">
-              <div class="timer-ring">
-                <svg viewBox="0 0 160 160" width="160" height="160" fill="none">
-                  <circle
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    stroke="#e2e8f0"
-                    stroke-width="8"
-                  />
-                  <circle
-                    id="ring-progress"
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    stroke="#3b5bdb"
-                    stroke-width="8"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                <div class="timer-center">
-                  <span id="time-remaining">25:00</span>
-                  <span class="timer-label" id="timer-label">concentració</span>
-                </div>
-              </div>
-              <span class="session-phase" id="session-phase"
-                >Sessió de treball</span
+            <section
+              class="feature-item widget distraction-widget"
+              style="margin-top: 20px"
+            >
+              <h3 style="margin-bottom: 15px; font-size: 1.2rem">
+                Control de Distraccions
+              </h3>
+              <div
+                class="status-badge"
+                style="
+                  background: #e8f5e9;
+                  color: #2e7d32;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  justify-content: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
               >
+                <span
+                  class="pulse-dot"
+                  style="background-color: #2e7d32"
+                ></span>
+                <span class="status-text" style="font-weight: bold"
+                  >📱 Mòbil Silenciat</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #666;
+                  margin-top: 10px;
+                  text-align: center;
+                "
+              >
+                Perfil actiu: <strong>Estil de vida saludable</strong>
+              </p>
+            </section>
+
+            <div class="timer-display">
+              <span id="time-remaining" class="time-text">25:00</span>
+              <p class="timer-subtitle">Sessió de concentració</p>
             </div>
 
-            <div class="session-dots" id="session-dots">
-              <div class="session-dot" id="dot-0"></div>
-              <div class="session-dot" id="dot-1"></div>
-              <div class="session-dot" id="dot-2"></div>
-              <div class="session-dot" id="dot-3"></div>
-            </div>
-
-            <div class="timer-controls">
-              <button id="start-btn" class="btn-primary">
+            <div class="cta-container">
+              <button id="start-btn" class="btn-white btn-full">
                 Començar sessió
               </button>
-              <button id="pause-btn" class="btn-ghost">⏸</button>
-              <button id="reset-btn" class="btn-ghost">↺</button>
+              <div class="timer-controls">
+                <button id="pause-btn" class="btn-secondary btn-sm">
+                  Pausa
+                </button>
+                <button id="reset-btn" class="btn-secondary btn-sm">
+                  Reiniciar
+                </button>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <!-- Distraction control -->
-          <div class="widget">
-            <div class="widget-header">
-              <span class="widget-title">Control de Distraccions</span>
+          <section class="feature-item widget">
+            <h3 style="margin-bottom: 20px; font-size: 1.2rem">
+              Etiquetes de sessió
+            </h3>
+            <div class="tag-cloud">
+              <button class="badge active-tag">Treball</button>
+              <button class="badge">Estudi</button>
+              <button class="badge">Personal</button>
+              <button class="badge add-tag">+ Nova</button>
             </div>
-            <div class="distraction-row">
-              <span class="distraction-label">📱 Mòbil</span>
-              <span class="pill pill-green">Silenciat</span>
-            </div>
-            <div class="distraction-row">
-              <span class="distraction-label">🌐 Webs blocat</span>
-              <span class="pill pill-green">Actiu</span>
-            </div>
-            <div class="distraction-row">
-              <span class="distraction-label">🔔 Notificacions</span>
-              <span class="pill pill-amber">Prioritat</span>
-            </div>
-            <p
-              style="margin-top: 10px; font-size: 0.78rem; color: var(--text-3)"
-            >
-              Perfil actiu:
-              <strong style="color: var(--text-2)"
-                >Estil de vida saludable</strong
+          </section>
+
+          <section
+            class="feature-item widget harvard-insight-widget"
+            style="
+              margin-top: 20px;
+              border: 1px dashed #4a90e2;
+              background: #fafafa;
+            "
+          >
+            <header class="widget-header" style="margin-bottom: 8px">
+              <h3
+                style="
+                  margin: 0;
+                  font-size: 1rem;
+                  color: #4a90e2;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
               >
-            </p>
-          </div>
-
-          <!-- Mood check -->
-          <div class="widget">
-            <div class="widget-header">
-              <span class="widget-title">Estat emocional</span>
-            </div>
+                💡 Harvard Science Insight
+              </h3>
+            </header>
             <p
               style="
-                font-size: 0.82rem;
-                color: var(--text-3);
-                margin-bottom: 6px;
+                font-size: 0.85rem;
+                color: #333;
+                line-height: 1.4;
+                margin: 0;
               "
             >
-              Com et trobes ara mateix?
+              "La teva creativitat augmenta un 31% quan el cervell funciona des
+              del positivisme en lloc de l'estrès."
             </p>
-            <div class="mood-row">                
-              <button class="mood-btn" title="Estressat">
-                Cansado
-              </button>
-              <button class="mood-btn" title="Neutre">
-              <button class="mood-btn title="Estressat">
-                Estresado
-              </button>
-              <button class="mood-btn" title="Neutre">
-                Neutro
-              </button>
-              <button class="mood-btn" title="Bé">Bien</button>
-              <button class="mood-btn" title="Motivat">
-                Motivado
-              </button>
-            </div>
-            <p id="mood-feedback"></p>
-          </div>
-
-          <!-- Insight -->
-          <div
-            class="widget insight-widget"
-            style="background: var(--brand-light)"
-          >
-            <p class="insight-eyebrow">💡 Harvard Science Insight</p>
-            <p class="insight-quote" id="insight-text">
-              "La creativitat augmenta un 31% quan el cervell opera des del
-              positivisme en lloc de l'estrès."
-            </p>
-            <span class="insight-author" id="insight-author"
-              >— Dr. Shawn Achor</span
-            >
-          </div>
-
-          <!-- Tags -->
-          <div class="widget">
-            <div class="widget-header">
-              <span class="widget-title">Etiquetes de sessió</span>
-            </div>
-            <div class="tag-cloud" id="tag-cloud">
-              <button class="tag active">Treball</button>
-              <button class="tag">Estudi</button>
-              <button class="tag">Personal</button>
-              <button class="tag add">+ Nova</button>
-            </div>
-          </div>
+            <div style="margin-top: 8px; text-align: right"></div>
+          </section>
         </aside>
 
-        <!-- ===== WORKSPACE ===== -->
         <section class="workspace">
-          <div class="workspace-card">
-            <div class="tab-bar">
-              <button class="tab active" data-tab="tasques">
-                Tasques del dia
-              </button>
-              <button class="tab" data-tab="notes">Notes ràpides</button>
-              <button class="tab" data-tab="habits">Pauses i Hàbits</button>
-            </div>
-
-            <div class="workspace-body">
-              <!-- TAB: Tasques -->
-              <div id="tab-tasques">
-                <div class="health-grid">
-                  <div class="health-metric">
-                    <div class="val" id="tasques-count">0</div>
-                    <div class="lbl">Tasques avui</div>
-                    <div class="progress-bar-wrap">
-                      <div
-                        class="progress-bar"
-                        id="tasques-bar"
-                        style="width: 0%"
-                      ></div>
-                    </div>
-                  </div>
-                  <div class="health-metric">
-                    <div class="val" id="tasques-done">0</div>
-                    <div class="lbl">Completades</div>
-                    <div class="progress-bar-wrap">
-                      <div
-                        class="progress-bar"
-                        id="done-bar"
-                        style="width: 0%; background: var(--green)"
-                      ></div>
-                    </div>
-                  </div>
+          <div class="feature-item workspace-card">
+            <header class="workspace-header">
+              <div class="header-tabs">
+                <div class="header-tabs">
+                  <button class="tab active-tab">Tasques del dia</button>
+                  <button class="tab">Notes ràpides</button>
+                  <button class="tab" style="color: #4a90e2">
+                    Pauses i Hàbits
+                  </button>
                 </div>
-
-                <ul class="task-list" id="task-list"></ul>
-
-                <div class="empty-state" id="empty-tasques">
-                  <div class="empty-icon">✓</div>
-                  <h2>Tot en ordre</h2>
-                  <p>
-                    Encara no tens tasques per a aquesta sessió. Comença
-                    planificant el teu dia.
-                  </p>
-                </div>
-
-                <div class="inline-add">
-                  <input
-                    type="text"
-                    id="task-input"
-                    placeholder="Escriu una tasca i prem Afegir…"
-                  />
-                  <button id="add-task-btn">Afegir</button>
-                </div>
-              </div>
-
-              <!-- TAB: Notes -->
-              <div id="tab-notes" style="display: none">
-                <ul class="task-list" id="note-list"></ul>
-                <div class="empty-state" id="empty-notes">
-                  <div class="empty-icon">📝</div>
-                  <h2>Sense notes</h2>
-                  <p>
-                    Captura idees, reflexions o recordatoris mentre treballes.
-                  </p>
-                </div>
-                <div class="inline-add">
-                  <input
-                    type="text"
-                    id="note-input"
-                    placeholder="Escriu una nota i prem Afegir…"
-                  />
-                  <button id="add-note-btn">Afegir</button>
-                </div>
-              </div>
-
-              <!-- TAB: Habits -->
-              <div id="tab-habits" class="habit-panel">
-                <p
+                <div
+                  class="habit-break-panel"
                   style="
-                    font-size: 0.85rem;
-                    color: var(--text-3);
-                    margin-bottom: 16px;
+                    margin-top: 20px;
+                    padding: 15px;
+                    background: #f0f4f8;
+                    border-radius: 12px;
+                    border-left: 5px solid #4a90e2;
                   "
                 >
-                  Basades en el teu perfil
-                  <strong style="color: var(--text-2)"
-                    >Estil de vida saludable</strong
-                  >
-                  i la ciència de Harvard.
-                </p>
-
-                <div class="habit-card">
-                  <div class="habit-icon walk">🚶</div>
-                  <div class="habit-meta">
-                    <h4>Passeig actiu de 10 min</h4>
-                    <p>
-                      Redueix el cortisol un 15% i millora la concentració
-                      posterior.
-                    </p>
-                    <span class="habit-badge soon">Pròxima pausa</span>
-                  </div>
-                </div>
-
-                <div class="habit-card">
-                  <div class="habit-icon breath">🫁</div>
-                  <div class="habit-meta">
-                    <h4>Respiració 4-7-8</h4>
-                    <p>
-                      Tres cicles per activar el sistema nerviós parasimpàtic i
-                      reduir l'ansietat.
-                    </p>
-                    <span class="habit-badge done2">Completada avui</span>
-                  </div>
-                </div>
-
-                <div class="habit-card">
-                  <div class="habit-icon water">💧</div>
-                  <div class="habit-meta">
-                    <h4>Hidratació cada hora</h4>
-                    <p>
-                      Una deshidratació del 2% redueix el rendiment cognitiu
-                      fins a un 20%.
-                    </p>
-                    <span class="habit-badge soon">Pendent</span>
+                  <div style="display: flex; align-items: center; gap: 15px">
+                    <div>
+                      <h4 style="margin: 0; font-size: 1.1rem; color: #333">
+                        Pròxima Pausa Activa: Passeig de 10 min.
+                      </h4>
+                      <p
+                        style="
+                          margin: 5px 0 0 0;
+                          font-size: 0.9rem;
+                          color: #555;
+                        "
+                      >
+                        Segons el teu perfil, et toca desconnectar 10 minuts a
+                        l'aire lliure.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </header>
+
+            <div class="workspace-content">
+              <div class="empty-state">
+                <div
+                  class="icon-box empty-icon"
+                  style="margin: 0 auto 20px auto"
+                >
+                  ✓
+                </div>
+                <h2 style="font-size: 2rem; margin-bottom: 10px">
+                  Tot en ordre
+                </h2>
+                <p>
+                  Encara no tens cap tasca programada per a aquesta sessió.
+                  Aprofita per planificar el teu dia amb claredat.
+                </p>
+                <button class="btn-secondary" style="margin-top: 15px">
+                  + Afegeix una tasca
+                </button>
+              </div>
             </div>
-            <!-- /workspace-body -->
           </div>
         </section>
       </div>
     </main>
 
     <footer class="dashboard-footer">
-      <div class="footer-flex">
+      <div class="container footer-flex">
         <div class="footer-stats">
-          <span class="stat-chip"
-            ><strong>Sessió:</strong> <span id="footer-sessions">0</span> /
-            4</span
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Sessió:</strong> 0 / 4 completades</span
           >
-          <span class="stat-chip">🔥 <strong>Ratxa:</strong> 5 dies</span>
-          <span
-            class="stat-chip"
-            id="footer-mood-chip"
-            style="display: none"
-          ></span>
+          <span class="badge" style="margin-bottom: 0"
+            ><strong>Ratxa:</strong> 🔥 5 dies</span
+          >
         </div>
-        <p class="footer-copy">&copy; 2026 Omar Ayaou — Focusly</p>
+        <div class="footer-legal">
+          <p style="margin: 0; font-size: 0.9rem">
+            &copy; 2026 Omar Ayaou - Focusly
+          </p>
+        </div>
       </div>
     </footer>
 
