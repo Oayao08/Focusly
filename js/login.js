@@ -22,16 +22,6 @@ async function handleRegister() {
       emailRedirectTo: "https://focusly-app-azure.vercel.app/app.html",
     },
   });
-
-  if (error) {
-    msg.innerText = "Error: " + error.message;
-    msg.className = "status-msg error";
-  } else {
-    // IMPORTANTE: Si en Supabase "Confirm Email" activado,
-    // el usuario no podrá loguearse hasta que haga clic en el link de su correo.
-    msg.innerText = "Compte creat! Revisa el teu correu per confirmar.";
-    msg.className = "status-msg success";
-  }
 }
 
 // LOGIN
